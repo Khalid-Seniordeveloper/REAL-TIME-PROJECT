@@ -119,14 +119,15 @@ html{
     margin-bottom: 0.2rem;
   } 
   .Selectors{
-    width: 25rem;
+    width: 27rem;
+    height:  6rem;
   }
 .selector-container{
  display: grid;
  grid-template-columns: repeat(2 , 1fr);
 }
 .selector-div-container {
-    height: 18rem;
+    height: 25rem;
     /* margin-top: -36rem; */
     width: 100%;
 
@@ -142,7 +143,24 @@ html{
     font-size: 3rem;
 
 }
-
+.selected-options{
+    font-size: 1.8rem;
+}
+.options-title{
+   font-size: 1.9rem; 
+}
+.slider-light{
+    width: 4rem;
+    height: 4rem;
+}
+.find-cars{
+    padding: 1.2rem;
+    font-size: 2rem;
+}
+.search{
+   width: 1.8rem;
+   height: 2.2rem;
+}
 }
 
  

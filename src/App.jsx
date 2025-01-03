@@ -157,7 +157,7 @@ const App = () => {
                   className="Selectors  w-[25rem] h-[4rem] bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-left flex items-center justify-between 
                 hover:border-orange-500/50 focus:outline-none focus:border-orange-500 transition-all duration-300"
                 >
-                  <span className="text-gray-400 text-[1.5rem]">{selector.placeholder}</span>
+                  <span className="text-gray-400 text-[1.5rem] options-title">{selector.placeholder}</span>
                   <ChevronDown
                     className={`w-5 h-5 text-orange-500 transition-transform duration-200 ${
                       openSelector === selector.id ? 'rotate-180' : ''
@@ -170,7 +170,7 @@ const App = () => {
                       {selector.options.map((option) => (
                         <li
                           key={option}
-                          className="px-4 py-2 hover:bg-gray-700/50 cursor-pointer text-gray-300 
+                          className="selected-options px-4 py-2 hover:bg-gray-700/50 cursor-pointer text-gray-300 
                         hover:text-white transition-colors duration-150"
                         >
                           {option}
@@ -189,12 +189,12 @@ const App = () => {
               transition-colors duration-300"
                 title="Settings"
               >
-                <PiSlidersLight className="w-8 h-8 text-orange-500" />
+                <PiSlidersLight className="w-8 h-8 text-orange-500 slider-light" />
               </button>
 
-              <button className="px-12 py-4 bg-orange-500 text-white text-[1.2rem] rounded-lg flex items-center gap-2 hover:bg-orange-600 transition-colors duration-300">
+              <button className="find-cars px-12 py-4 bg-orange-500 text-white text-[1.2rem] rounded-lg flex items-center gap-2 hover:bg-orange-600 transition-colors duration-300">
                 <span>Find cars</span>
-                <Search className="w-5 h-5" />
+                <Search className="w-5 h-5 search" />
               </button>
             </div>
           </div>
