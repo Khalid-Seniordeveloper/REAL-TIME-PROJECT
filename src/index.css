@@ -1,0 +1,123 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html{
+    font-size: 62.5%;
+}
+.navbar-container{
+    border-bottom: 1px solid red;
+    margin-left: 0%;
+    margin-right: 0%;
+}
+.selector-div-container{
+    margin-left: 0%;
+    margin-right: 0%;
+}
+.crousel{
+    margin-left: 0%;
+    margin-right: 0%;
+}
+
+.bar{
+    display: none;
+}
+
+@media(max-width : 1050px){
+
+    html{
+        font-size: 50%;
+    }
+    .drop-down{
+        margin-top: 0.1rem;
+    }
+ 
+}
+@media(max-width : 936px){
+    html{
+        font-size: 45%;
+    }
+}
+@media(max-width : 850px){
+    .Selectors{
+        width: 20rem;
+    }
+    .navbar-container{
+        gap: 13rem;
+    }
+}
+@media(max-width : 550px){
+    html{
+        font-size: 40%;
+    }
+    .bar-container{
+        display: block;
+    }
+    .navbar-container{
+        gap: 12rem;
+        /* height: 1rem; */
+    }
+    .navigate-link{
+        display: none;
+    }
+    .Selectors{
+        width: 10rem;
+    }
+    .car-name{
+        margin-top: 9rem;
+    }
+  
+}
+@media(max-width : 430px){
+    html{
+        font-size: 37%;
+    }
+     .navbar-container{
+     height: 14rem;
+     gap: 9rem;
+    }
+    .navbar-btn{
+        padding: 2rem ;
+        font-size: rem;
+    
+    }
+    .listing-btn{
+        font-size: 2rem;
+    }
+   .bar{
+    display: block;
+    margin-left: 2rem;   
+}
+
+   .login{
+    display: none;
+   }
+   .register{
+    display: none;
+   }
+    .logo{
+        width: 18rem;
+    }
+    .model-car{
+        width: 37rem;
+    }
+    .previous-btn{
+        margin-left: -2rem;
+    }
+  .next-btn{
+    margin-right: 1.8rem;
+    margin-bottom: 0.2rem;
+  } 
+  .Selectors{
+    width: 30rem;
+  }
+.selector-container{
+ display: grid;
+ grid-template-columns: repeat(2 , 1fr);
+}
+.selector-div-container {
+    height: 18rem;
+    margin-top: -36rem;
+
+}}
+ 
