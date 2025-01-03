@@ -92,7 +92,7 @@ const App = () => {
       <Navbar />
       <section>
         <div className="crousel relative w-[100%]">
-          <div className="relative h-[560px] bg-black overflow-hidden">
+          <div className="relative crousel-container-for-height h-[400px] bg-black overflow-hidden">
             <div className="flex h-full transition-transform duration-500 ease-in-out relative">
               {carData.map((car, index) => (
                 <div
@@ -115,12 +115,12 @@ const App = () => {
                     <h3 className="text-[6rem] car-model font-bold mt-[-2rem]">{car.model}</h3>
                   </div>
 
-                  <div className="absolute inset-0 flex items-center justify-center ">
+                  <div className="absolute inset-0 flex items-center justify-center mt-[15rem]">
                     <img
                       src={car.image}
                       alt={`${car.name} ${car.model}`}
                       layout="fill"
-                      className="object-contain max-h-[65%] w-[40%] mt-[-8rem] model-car"
+                      className="object-contain max-h-[85%] w-[40%] mt-[-8rem] model-car"
                     />
                   </div>
                 </div>
@@ -132,7 +132,7 @@ const App = () => {
               onClick={prevSlide}
               className="previous-btn absolute left-20 top-1/2 mt-[-5rem] ml-[11rem] bg-[#1f1f1f] text-red-500 hover:bg-[#333333] p-2 rounded-full transition-all duration-300 ease-in-out z-20"
             >
-              <ChevronLeft className="w-[5rem] h-[5rem] mr-[0.7rem] transition-transform duration-300 ease-in-out group-hover:scale-110 group-hover:text-white" />
+              <ChevronLeft className=" w-[5rem] h-[5rem] mr-[0.7rem] transition-transform duration-300 ease-in-out group-hover:scale-110 group-hover:text-white" />
             </button>
             <button
               title="Next"
@@ -148,7 +148,7 @@ const App = () => {
 
         <div>
       <section>
-        <div className="selector-div-container relative w-[100%] h-[7rem] bg-gray-800 bg-gradient-to-br from-gray-900 to-gray-800 p-4 rounded-lg  flex justify-center items-center ">
+        <div className="selector-div-container relative w-[100%] h-[7rem] bg-gray-800 bg-gradient-to-br from-gray-900 to-gray-800 p-4 rounded-lg  flex justify-center items-center">
           <div className="selector-container flex items-center gap-4">
             {selectors.map((selector) => (
               <div key={selector.id} className="relative flex-1">

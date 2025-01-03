@@ -72,7 +72,7 @@ const Navbar = () => {
   
   <img src={ListCar} alt="Car" class="w-20 h-11 object-cover mr-3 transition-all duration-500 rotate-0 group-hover:rotate-6" />
   
-  <span class="relative z-10 text-[1.5rem] listing-btn">Add Listing</span>
+  <span class="relative z-10 text-[1.5rem] listing">Add Listing</span>
 </button>
 
 
