@@ -221,10 +221,27 @@ html{
    height: 2.2rem;
 }
 }
+@media(max-width : 379px){
+    .next-btn{
+        margin-top: 2rem;
+        margin-right:1.5rem;
+    }
+    .previous-btn{
+        margin-top: -1.9rem;
 
+        margin-left: -1.5rem;
+    }
+    .listing{
+        font-size: 2.1rem;
+    }
+    .navbar-container{
+        gap: 7.7rem;
+    }
+   
+    }
  @media(max-width : 320px){
     .navbar-container{
-        gap: 5.7rem;
+        gap: 4.6rem;
     }
     .Selectors{
         width: 22rem;
@@ -236,5 +253,8 @@ html{
     .previous-btn{
         margin-left: -1.5rem;
         margin-top: -1rem;
+    }
+    .listing{
+        font-size: 1.7rem;
     }
  }
