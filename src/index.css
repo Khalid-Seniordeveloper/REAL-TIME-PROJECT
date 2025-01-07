@@ -35,6 +35,16 @@ html{
     background-position: center;
     background-repeat: no-repeat;
 }
+.cards-parent-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+padding-left: 2.6rem;
+row-gap: 3rem;
+  }
+  .Selectors{
+    width: 24.7rem;
+}
+
 
 
 /* Animation  */
@@ -64,7 +74,9 @@ html{
     }
   }
   
-
+.Login-container{
+    display: none;
+}
 
 @media(max-width: 5000px) {
     .crousel,
@@ -83,6 +95,11 @@ html{
     }
     .drop-down{
         margin-top: 0.1rem;
+    }
+    .signin-fields{
+        padding: 1.5rem;
+        font-size: 1.5rem;
+        padding-left: 3.9rem;
     }
  
 }
@@ -103,14 +120,42 @@ html{
 }
 .previous-btn{
     margin-left: 0.6rem;
-}}
+}
+.cards-parent-container{
+    grid-template-columns: repeat(2 , 1fr);
+    padding-left: 8rem;
+}
+}
 @media(max-width : 768px){
 .next-btn{
     margin-right:1.5rem;
 }
 .previous-btn{
-    margin-left: -1.5rem;
+    margin-left: -2.4rem;
 }
+.bar-container{
+    display: none;
+}
+.bar{
+    display: none;
+}
+.signin-fields{
+    padding: 1.5rem;
+    font-size: 1.5rem;
+    padding-left: 5rem;
+}
+.signin-title{
+    font-size: 3rem;
+}
+.signin-btn{
+    padding: 1rem 3rem;
+    font-size: 1.8rem;
+    width: 50%;
+}
+.Selectors{
+    width: 19.5rem;
+}
+
 }
 @media(max-width : 550px){
     html{
@@ -132,7 +177,16 @@ html{
     .car-name{
         margin-top: 9rem;
     }
+    .login{
+        display: none;
     
+    }
+    .register{
+        display: none;
+    }
+   .cards-parent-container{
+    padding: 1.5rem;
+   }
   
 }
 @media(max-width : 430px){
@@ -191,6 +245,28 @@ html{
     width: 100%;
 
 }
+.cards-parent-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+    width: 50%;
+    font-size: 1.1rem;
+    /* padding-left: 5rem; */
+}
+.fields-container{
+    width: 50%;
+    font-size: 1.7rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.featured-container{
+    font-size: 2rem;
+}
+.drop-main-container{
+    gap: 0rem;
+}
 .crousel-container-for-height{
     height: 300px;
 }
@@ -208,6 +284,10 @@ html{
 .options-title{
    font-size: 1.9rem; 
 }
+.checkbox{
+    width: 2rem;
+    height: 2rem;
+}
 .slider-light{
     width: 4rem;
     height: 4rem;
@@ -220,41 +300,51 @@ html{
    width: 1.8rem;
    height: 2.2rem;
 }
+.fields-container{
+    width: 40%;
 }
-@media(max-width : 379px){
-    .next-btn{
-        margin-top: 2rem;
-        margin-right:1.5rem;
+.cards-parent-container{
+    width: 40%;
+}
+
+}
+@media(max-width: 376px){
+    .fields-container {
+        width: 47% ;
+    }
+    .cards-parent-container {
+        width: 41%;
     }
     .previous-btn{
-        margin-top: -1.9rem;
+        margin-left: 0;
+        margin-top: 1rem;
+    }
+    .next-btn{
+        margin-right: 1.8rem;
+        margin-top: 4.1rem;
 
-        margin-left: -1.5rem;
     }
-    .listing{
-        font-size: 2.1rem;
-    }
-    .navbar-container{
-        gap: 7.7rem;
-    }
-   
-    }
+ }
+
  @media(max-width : 320px){
     .navbar-container{
-        gap: 4.6rem;
+        gap: 5.7rem;
     }
     .Selectors{
         width: 22rem;
     }
     .next-btn{
         margin-right: 2rem;
-        margin-top: 2rem;
+        margin-top: 2.2rem;
     }
     .previous-btn{
         margin-left: -1.5rem;
         margin-top: -1rem;
     }
-    .listing{
-        font-size: 1.7rem;
+    .fields-container{
+        width: 46%;
+    }
+    .cards-parent-container{
+        width: 46%;
     }
  }

@@ -2,10 +2,19 @@ import React, { useState } from 'react';
 import Logo from '../../assets/Logo.jpg';
 import ListCar from '../../assets/ListCar.png';
 // import "../../Font/Poppins/Poppins-SemiBold.ttf";
-import { ChevronDown,  Search, Menu,LogIn ,CircleUserRound , X, Home, User2, Briefcase,TableOfContents , MessageCircle, ChevronRight, Car } from 'lucide-react';
+import { ChevronDown,  Search, Menu,LogIn ,CircleUserRound ,  Home, User2, Briefcase,TableOfContents , MessageCircle, ChevronRight, Car } from 'lucide-react';
+import { X, Mail, Lock, User , KeyRound } from 'lucide-react';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+
+  const [isLoginOpen, setIsLoginOpen] = useState(false);
+  const [isSignupOpen, setIsSignupOpen] = useState(false);
+
+  const closePanel = () => {
+    setIsLoginOpen(false);
+    setIsSignupOpen(false);
+  };
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -53,14 +62,118 @@ const Navbar = () => {
 
 
           <div className="flex items-center gap-[0.5rem]">
-            <button className="login px-6 py-2 bg-transparent text-white font-medium rounded-lg border-2 border-[#E63946] relative overflow-hidden group transition-all duration-500 text-[1.7rem]">
-              <span className="absolute left-0 top-0 w-full h-full bg-gradient-to-r from-red-500 to-white transform scale-x-0 group-hover:scale-x-100 transition-all duration-700 origin-left"></span>
-              <span className="relative group-hover:text-white">Login</span>
-            </button>
-            <button className="register px-6 py-2 bg-transparent text-white font-medium rounded-lg border-2 border-[#E63946] relative overflow-hidden group transition-all duration-500 text-[1.7rem] hover:bg-black">
-              <span className="absolute left-0 top-0 w-full h-full bg-gradient-to-r from-red-500 to-white transform scale-x-0 group-hover:scale-x-100 transition-all duration-700 origin-left"></span>
-              <span className="relative group-hover:text-white">Register</span>
-            </button>
+          <button
+    onClick={() => setIsLoginOpen(true)}
+    className="login px-6 py-2 bg-transparent text-white font-medium rounded-lg border-2 border-[#E63946] relative overflow-hidden group transition-all duration-500 text-[1.7rem]"
+  >
+    <span className="absolute left-0 top-0 w-full h-full bg-gradient-to-r from-red-500 to-white transform scale-x-0 group-hover:scale-x-100 transition-all duration-700 origin-left"></span>
+    <span className="relative group-hover:text-white">Login</span>
+  </button>
+
+  {/* Login Panel */}
+  <div
+    className={`fixed top-0 right-0 h-full bg-black text-white z-50 transform transition-all duration-500 ${
+   isLoginOpen ? 'translate-x-0 w-[325px]' : 'translate-x-full w-0 opacity-0'
+ }`}
+  >
+
+
+    <button onClick={closePanel} className="absolute top-4 right-4 text-white hover:text-red-500">
+      <X size={24} />
+    </button>
+    <div className="p-8  h-[100%] flex justify-center items-center flex-col">
+      <h2 className="text-5xl font-bold mb-8 signin-title">Login</h2>
+      <div className="relative w-[80%] mb-4">
+  <Mail className="absolute top-1/2 left-3 transform -translate-y-1/2 text-gray-400" size={20} />
+  <input
+    type="email"
+    placeholder="Email"
+    className="signin-fields w-full p-[1rem] pl-[3.3rem] bg-gray-800 text-white rounded text-[1.2rem] focus:outline-none"
+  />
+</div>
+<div className="relative w-[80%] mb-4">
+
+<KeyRound  className="absolute top-1/2 left-3 transform -translate-y-1/2 text-gray-400" size={20}/>
+      <input
+        type="password"
+        placeholder="Password"
+        className="signin-fields w-full p-[1rem] pl-[3.3rem] bg-gray-800 text-white rounded text-[1.2rem] focus:outline-none"
+      />
+      </div>
+      <button className="w-[30%] bg-red-600 py-2 py-[1rem]  rounded hover:bg-red-700 transition-all text-[1.2rem] signin-btn">
+        Login
+      </button>
+    </div>
+  </div>
+
+  {/* Register Button */}
+
+
+
+
+  <button
+    onClick={() => setIsSignupOpen(true)}
+    className="register px-6 py-2 bg-transparent text-white font-medium rounded-lg border-2 border-[#E63946] relative overflow-hidden group transition-all duration-500 text-[1.7rem] hover:bg-black"
+  >
+    <span className="absolute left-0 top-0 w-full h-full bg-gradient-to-r from-red-500 to-white transform scale-x-0 group-hover:scale-x-100 transition-all duration-700 origin-left"></span>
+    <span className="relative group-hover:text-white">Register</span>
+  </button>
+
+  {/* Signup Panel */}
+  <div
+    className={`fixed top-0 right-0 h-full bg-black text-white z-50 transform transition-all duration-500 ${
+   isSignupOpen ? 'translate-x-0 w-[325px]' : 'translate-x-full w-0 opacity-0'
+ }`}
+  >
+    <button onClick={closePanel} className="absolute top-4 right-4 text-white hover:text-red-500">
+      <X size={24} />
+    </button>
+    <div className="p-8  h-[100%] flex justify-center items-center flex-col" >
+      <h2 className=" text-5xl font-bold mb-8 signin-title">Sign Up</h2>
+
+      <div className="relative w-[80%] mb-4">
+
+<User  className="absolute top-1/2 left-3 transform -translate-y-1/2 text-gray-400" size={20}/>
+      <input
+        type="text"
+        placeholder="Username"
+        className="signin-fields w-full p-[1rem] pl-[3.3rem] bg-gray-800 text-white rounded text-[1.2rem] focus:outline-none"
+      />
+      </div>
+      <div className="relative w-[80%] mb-4">
+  <Mail className="absolute top-1/2 left-3 transform -translate-y-1/2 text-gray-400" size={20} />
+  <input
+    type="email"
+    placeholder="Email"
+    className="signin-fields w-full p-[1rem] pl-[3.3rem] bg-gray-800 text-white rounded text-[1.2rem] focus:outline-none"
+  />
+</div>
+     <div className="relative w-[80%] mb-4">
+
+<KeyRound  className="absolute top-1/2 left-3 transform -translate-y-1/2 text-gray-400" size={20}/>
+      <input
+        type="password"
+        placeholder="Password"
+        className="signin-fields w-full p-[1rem] pl-[3.3rem] bg-gray-800 text-white rounded text-[1.2rem] focus:outline-none"
+      />
+      </div>
+      <div className="relative w-[80%] mb-4">
+
+<KeyRound  className="absolute top-1/2 left-3 transform -translate-y-1/2 text-gray-400" size={20}/>
+      <input
+        type="password"
+        placeholder="Confirm Password"
+        className="signin-fields w-full p-[1rem] pl-[3.3rem] bg-gray-800 text-white rounded text-[1.2rem] focus:outline-none"
+      />
+      </div>
+      <button className="w-[30%] bg-red-600 py-[1rem] rounded hover:bg-red-700 transition-all text-[1.2rem] signin-btn">
+        Sign Up Now
+      </button>
+        </div>
+      </div>
+
+
+
             <button className="navbar-btn flex items-center justify-center px-6 py-4 bg-transparent text-white font-semibold border-2 border-transparent rounded-lg relative overflow-hidden group transition-all duration-500">
               <span className="absolute inset-0 bg-gradient-to-r from-red-500 to-yellow-400 group-hover:from-yellow-400 group-hover:to-red-500 transition-all duration-700"></span>
               <span className="relative z-10 text-[1.2rem] listing">Add Listing</span>
@@ -102,12 +215,22 @@ const Navbar = () => {
               <span className='text-[2rem]'>Contact</span>
               <ChevronRight size={20} className="ml-auto opacity-0 group-hover:opacity-100" />
             </a>
-            <a href="#" className="group flex items-center space-x-2 text-white hover:text-red-500 transition-all duration-300 transform hover:translate-x-2">
+            <a
+  href="#"
+  className="group flex items-center space-x-2 text-white hover:text-red-500 transition-all duration-300 transform hover:translate-x-2"
+  onClick={() => {
+    setIsOpen(false); 
+    setIsLoginOpen(true); 
+  }}
+>
             <LogIn  size={22} />
               <span className='text-[2rem]'>Login</span>
               <ChevronRight size={20} className="ml-auto opacity-0 group-hover:opacity-100" />
             </a>
-            <a href="#" className="group flex items-center space-x-2 text-white hover:text-red-500 transition-all duration-300 transform hover:translate-x-2">
+            <a href="#" className="group flex items-center space-x-2 text-white hover:text-red-500 transition-all duration-300 transform hover:translate-x-2"   onClick={() => {
+    setIsOpen(false); 
+    setIsSignupOpen(true); 
+  }}>
             <CircleUserRound  size={22} />
               <span className='text-[2rem]'>Register</span>
               <ChevronRight size={20} className="ml-auto opacity-0 group-hover:opacity-100" />
@@ -116,8 +239,144 @@ const Navbar = () => {
         </div>
 
       </div>
+
+
+{/* Login Signup  */}
+
+
+
+
+
+
     </header>
+
+
+
+
+
   );
 }
 
+
+
+
+
+
+
+
+
+
+
 export default Navbar;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// className={`fixed top-0 right-0 h-full bg-black text-white z-50 transform transition-all duration-500 ${
+//   isLoginOpen ? 'translate-x-0 w-[400px]' : 'translate-x-full w-0'
+// }`}
+// >
+// <button onClick={closePanel} className="absolute top-4 right-4 text-white hover:text-red-500">
+//   <X size={24} />
+// </button>
+// <div className="p-8">
+//   <h2 className="text-3xl font-bold mb-8">Login</h2>
+//   <input
+//     type="email"
+//     placeholder="Email"
+//     className="w-full mb-4 p-2 bg-gray-800 text-white rounded"
+//   />
+//   <input
+//     type="password"
+//     placeholder="Password"
+//     className="w-full mb-6 p-2 bg-gray-800 text-white rounded"
+//   />
+//   <button className="w-full bg-red-600 py-2 rounded hover:bg-red-700 transition-all">
+//     Login
+//   </button>
+// </div>
+// </div>
+
+
+//     <button  onClick={() => setIsSignupOpen(true) } className="register px-6 py-2 bg-transparent text-white font-medium rounded-lg border-2 border-[#E63946] relative overflow-hidden group transition-all duration-500 text-[1.7rem] hover:bg-black">
+//       <span className="absolute left-0 top-0 w-full h-full bg-gradient-to-r from-red-500 to-white transform scale-x-0 group-hover:scale-x-100 transition-all duration-700 origin-left"></span>
+//       <span className="relative group-hover:text-white" >Register</span>
+//     </button>
+
+
+
+//  {/* Signup  */}
+
+
+
+//  <div
+// className={`fixed top-0 right-0 h-full bg-black text-white z-50 transform transition-all duration-500 ${
+//   isSignupOpen ? 'translate-x-0 w-[400px]' : 'translate-x-full w-0'
+// }`}
+// >
+// <button onClick={closePanel} className="absolute top-4 right-4 text-white hover:text-red-500">
+//   <X size={24} />
+// </button>
+// <div className="p-8">
+//   <h2 className="text-3xl font-bold mb-8">Sign Up</h2>
+//   <input
+//     type="text"
+//     placeholder="Username"
+//     className="w-full mb-4 p-2 bg-gray-800 text-white rounded"
+//   />
+//   <input
+//     type="email"
+//     placeholder="Email"
+//     className="w-full mb-4 p-2 bg-gray-800 text-white rounded"
+//   />
+//   <input
+//     type="password"
+//     placeholder="Password"
+//     className="w-full mb-4 p-2 bg-gray-800 text-white rounded"
+//   />
+//   <button className="w-full bg-red-600 py-2 rounded hover:bg-red-700 transition-all">
+//     Sign Up
+//   </button>
+// </div>
+// </div>
+
+
+
+
+
+
+
+

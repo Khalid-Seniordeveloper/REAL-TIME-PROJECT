@@ -58,12 +58,13 @@ const Crousel = () => {
     };
 
   return (
+    <>
     <div className="crousel relative w-[100%] " >
     <div className="relative crousel-container-for-height h-[400px] bg-black overflow-hidden"  style={{
       backgroundImage: `url(${backgroundImage})`,
-      backgroundSize: 'cover',    // Makes sure the image covers the whole div
-      backgroundPosition: 'center', // Centers the background image
-      backgroundRepeat: 'no-repeat', // Prevents the image from repeating
+      backgroundSize: 'cover',   
+      backgroundPosition: 'center', 
+      backgroundRepeat: 'no-repeat', 
     }}>
       <div className="flex h-full transition-transform duration-500 ease-in-out relative">
         {carData.map((car, index) => (
@@ -102,19 +103,26 @@ const Crousel = () => {
       <button
         title="Previous"
         onClick={prevSlide}
-        className="previous-btn absolute left-20 top-1/2 mt-[-5rem] ml-[-2.3rem] bg-[#1f1f1f] text-red-500 hover:bg-[#333333] p-2 rounded-full transition-all duration-300 ease-in-out z-20"
+        className="previous-btn absolute left-20 top-1/2 mt-[-5rem] ml-[-1.2rem] bg-[#1f1f1f] text-red-500 hover:bg-[#333333] p-2 rounded-full transition-all duration-300 ease-in-out z-20"
       >
         <ChevronLeft className=" w-[5rem] h-[5rem] mr-[0.7rem] transition-transform duration-300 ease-in-out group-hover:scale-110 group-hover:text-white" />
       </button>
       <button
         title="Next"
         onClick={nextSlide}
-        className="next-btn absolute right-4 top-1/2 -translate-y-1/2 mt-[-1.3rem] mr-[1rem] bg-[#1f1f1f] text-red-500 hover:bg-[#333333] p-2 rounded-full transition-all duration-300 ease-in-out z-20"
+        className="next-btn absolute right-4 top-1/2 -translate-y-1/2 mt-[-1.3rem] mr-[1.7rem] bg-[#1f1f1f] text-red-500 hover:bg-[#333333] p-2 rounded-full transition-all duration-300 ease-in-out z-20"
       >
         <ChevronRight className="w-[5rem] h-[5rem] ml-[0.5rem]  transition-transform duration-300 ease-in-out group-hover:scale-110 group-hover:text-white" />
       </button>
     </div>
   </div>
+
+
+{/* DROP OUT  */}
+
+
+
+</>
   )
 }
 
