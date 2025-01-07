@@ -122,7 +122,7 @@ const Selector = () => {
 
               {/* Buttons */}
               <div className="flex items-center gap-4">
-                <RefreshCcw onClick={backToNormal} />
+                <RefreshCcw onClick={backToNormal} className='hover: cursor-pointer' />
                 <button
                   className="find-cars px-12 py-4 bg-orange-500 text-white text-[1.2rem] rounded-lg flex items-center gap-2 hover:bg-orange-600 transition-colors duration-300"
                   onClick={dropOpen}

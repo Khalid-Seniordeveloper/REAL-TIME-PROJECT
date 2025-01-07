@@ -4,7 +4,7 @@ import owner from '../../assets/owner.jpg'
 import { Camera, Fuel, Gauge, Workflow } from 'lucide-react'
 const Card = (props) => {
   return (
-<div className="max-w-sm bg-white rounded-3xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105">
+<div className="w-[28rem] cards-container bg-white rounded-3xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105">
       {/* Header badges */}
       <div className="relative">
         <div className="absolute top-4 left-4 z-10">

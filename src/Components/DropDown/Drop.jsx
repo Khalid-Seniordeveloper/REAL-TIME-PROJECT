@@ -215,155 +215,148 @@ const Drop = () => {
   
   return (
     <>
-      <div className='w-[100%] h-full flex justify-center   dropw-main-container mt-[3rem]'>
+      <div className='w-[100%] h-full flex justify-center gap-[2rem]   drop-main-container mt-[3rem] font-[Poppins]'>
         {/* First Column */}
-        <div className="w-[25%] h-full bg-[black] fields-container">
-          <div className="w-[100%] p-6 bg-white shadow">
-            <div className="flex justify-between items-center mb-6">
-              <h2 className="text-3xl font-semibold text-gray-800">Filters and Sort</h2>
-              <button className="text-gray-500 text-2xl hover:text-gray-700 flex items-center">
-                <X size={20} />
-                <span className="ml-1">Clear</span>
-              </button>
-            </div>
-            {Object.keys(dropdowns).map((name) => (
-              <div key={name} className="mb-4">
-                {/* Dropdown Button */}
-                <button
-                  onClick={() => handleDropdownClick(name)}
-                  className="w-full px-4 py-3 bg-white border border-gray-200 rounded-lg flex justify-between items-center hover:border-gray-300"
-                >
-                  <span className="text-gray-600 capitalize">
-                    {selectedOptions[name] || name}
-                  </span>
-                  <ChevronDown
-  size={20}
-  className={`transform transition-transform duration-200 ${
-    openDropdown === name ? 'rotate-180' : ''
-  }`}
-/>
-                </button>
+        <div className="w-[30%] h-full bg-[black] fields-container">
+  <div className="w-[100%] p-6 bg-black rounded-md shadow-lg border border-orange-500 shadow-white">
+    <div className="flex justify-between items-center mb-6">
+      <h2 className="text-3xl font-semibold text-gray-200">Filters and Sort</h2>
+      <button className="text-slate-400 text-2xl hover:text-gray-700 flex items-center">
+        <X size={20} />
+        <span className="ml-1">Clear</span>
+      </button>
+    </div>
 
-                {/* Dropdown Options */}
-                {openDropdown === name && (
-                  <div className="mt-2 p-2 bg-white border border-gray-200 rounded-lg">
-                    <select
-                      value={selectedOptions[name]}
-                      onChange={(e) => handleOptionChange(name, e.target.value)}
-                      className="w-full px-2 py-1.5 text-black bg-white border border-gray-200 rounded-lg"
-                    >
-                      <option value="" disabled>
-                        Select {name}
-                      </option>
-                      {dropdowns[name].map((option) => (
-                        <option key={option} value={option}>
-                          {option}
-                        </option>
-                      ))}
-                    </select>
-                  </div>
-                )}
-              </div>
-            ))}
+    {Object.keys(dropdowns).map((name) => (
+      <div key={name} className="mb-4">
+        {/* Dropdown Button */}
+        <button
+          onClick={() => handleDropdownClick(name)}
+          className="w-full px-4 py-3 bg-transparent border border-orange-500 shadow-sm shadow-white rounded-lg flex justify-between items-center hover:border-orange-500"
+        >
+          <span className="text-white capitalize">
+            {selectedOptions[name] || name}
+          </span>
+          <ChevronDown
+            size={20}
+            className={`transform transition-transform duration-200 ${
+              openDropdown === name ? "rotate-180" : ""
+            }`}
+          />
+        </button>
 
-        {/* Price Range Filter */}
-        <div className="mt-6 mb-6">
-              <div className="flex justify-between mb-2">
-                <span className="text-gray-600">Price:</span>
-                <span className="text-gray-800">
-                  ${priceRange[0]} — ${priceRange[1]}
-                </span>
-              </div>
-              <input
-  type="range"
-  min="0"
-  max="50000"
-  value={priceRange[1]}
-  onChange={handlePriceChange}
-  className="w-full h-2 bg-orange-500 rounded-lg appearance-none cursor-pointer 
-    [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-6 [&::-webkit-slider-thumb]:h-6 [&::-webkit-slider-thumb]:bg-orange-500 [&::-webkit-slider-thumb]:rounded-full"
-/>
-
-            </div>
-
-
-
-
-    {/* Render remaining dropdowns from `dropdownstwo` */}
-    {Object.keys(dropdownstwo).map((name) => (
-              <div key={name} className="mb-4">
-                <button
-                  onClick={() => handleDropdownClick(name)}
-                  className="w-full px-4 py-3 bg-white border border-gray-200 rounded-lg flex justify-between items-center hover:border-gray-300"
-                >
-                  <span className="text-gray-600 capitalize">
-                    {selectedOptions[name] || name}
-                  </span>
-                  <ChevronDown
-                    size={20}
-                    className={`transform transition-transform duration-200 ${
-                      openDropdown === name ? 'rotate-180' : ''
-                    }`}
-                  />
-                </button>
-
-                {openDropdown === name && (
-                  <div className="mt-2 p-2 bg-white border border-gray-200 rounded-lg">
-                    <select
-                      value={selectedOptions[name]}
-                      onChange={(e) => handleOptionChange(name, e.target.value)}
-                      className="w-full px-2 py-1.5 text-black bg-white border border-gray-200 rounded-lg"
-                    >
-                      <option value="" disabled>
-                        Select {name}
-                      </option>
-                      {dropdownstwo[name].map((option) => (
-                        <option key={option} value={option}>
-                          {option}
-                        </option>
-                      ))}
-                    </select>
-                  </div>
-                )}
-              </div>
-            ))}
-
-<div className="w-[100%]  p-6 bg-white ">
-          {/* Year Range Slider */}
-          <div className="mt-[-2rem] mb-6 ">
-            <div className="mb-2 text-gray-700">
-              Year: 2011 — {yearRange.toLocaleString()}
-            </div>
-            <div className="relative">
-              <div className="absolute h-2 bg-orange-500  left-0 right-0 top-1/2 -translate-y-1/2 rounded-full">
-                <div
-                  className="absolute h-full bg-orange-500 left-0"
-                  style={{
-                    width: `${((yearRange - 2011) / (2025 - 2011)) * 100}%`,
-                  }}
-                ></div>
-              </div>
-              <input
-                type="range"
-                min="2011"
-                max="2025"
-                value={yearRange}
-                onChange={(e) => setYearRange(parseInt(e.target.value))}
-                className="w-full h-2 appearance-none bg-transparent cursor-pointer relative z-10 [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-6 [&::-webkit-slider-thumb]:h-6 [&::-webkit-slider-thumb]:bg-orange-500 [&::-webkit-slider-thumb]:rounded-full [&::-moz-range-thumb]:w-6 [&::-moz-range-thumb]:h-6 [&::-moz-range-thumb]:bg-orange-500 [&::-moz-range-thumb]:border-0 [&::-moz-range-thumb]:rounded-full"
-              />
-            </div>
+        {/* Dropdown Options */}
+        {openDropdown === name && (
+          <div className="mt-2 p-2 bg-black border border-orange-500 rounded-lg">
+            <select
+              value={selectedOptions[name]}
+              onChange={(e) => handleOptionChange(name, e.target.value)}
+              className="w-full px-2 py-1.5 text-white bg-black border border-orange-500 rounded-lg focus:outline-none focus:ring-0 focus:ring-orange-500"
+            >
+              <option value="" disabled>
+                Select {name}
+              </option>
+              {dropdowns[name].map((option) => (
+                <option key={option} value={option}>
+                  {option}
+                </option>
+              ))}
+            </select>
           </div>
+        )}
+      </div>
+    ))}
+
+    {/* Price Range Filter */}
+    <div className="mt-6 mb-6">
+      <div className="flex justify-between mb-2">
+        <span className="text-orange-600 font-semibold text-xl">Price:</span>
+        <span className="text-gray-200">
+          ${priceRange[0]} — ${priceRange[1]}
+        </span>
+      </div>
+      <input
+        type="range"
+        min="0"
+        max="50000"
+        value={priceRange[1]}
+        onChange={handlePriceChange}
+        className="w-full h-2 bg-orange-500 rounded-lg appearance-none cursor-pointer 
+        [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-6 [&::-webkit-slider-thumb]:h-6 [&::-webkit-slider-thumb]:bg-orange-500 [&::-webkit-slider-thumb]:rounded-full"
+      />
+    </div>
+
+    {/* Render remaining dropdowns from dropdownstwo */}
+    {Object.keys(dropdownstwo).map((name) => (
+      <div key={name} className="mb-4">
+        <button
+          onClick={() => handleDropdownClick(name)}
+          className="w-full px-4 py-3 bg-black border border-orange-500 rounded-lg flex justify-between items-center hover:border-orange-500 shadow-sm shadow-white"
+        >
+          <span className="text-gray-200 capitalize">
+            {selectedOptions[name] || name}
+          </span>
+          <ChevronDown
+            size={20}
+            className={`transform transition-transform duration-200 ${
+              openDropdown === name ? "rotate-180" : ""
+            }`}
+          />
+        </button>
+
+        {openDropdown === name && (
+          <div className="mt-2 p-2 bg-transparent border border-orange-500 rounded-lg">
+            <select
+              value={selectedOptions[name]}
+              onChange={(e) => handleOptionChange(name, e.target.value)}
+              className="w-full px-2 py-1.5 text-gray-200 bg-transparent border border-orange-500 rounded-lg"
+            >
+              <option value="" disabled>
+                Select {name}
+              </option>
+              {dropdownstwo[name].map((option) => (
+                <option key={option} value={option}>
+                  {option}
+                </option>
+              ))}
+            </select>
+          </div>
+        )}
+      </div>
+    ))}
+
+    <div className="w-[100%] p-4 bg-transparent rounded-lg">
+      {/* Year Range Slider */}
+      <div className="mt-[0.6rem] mb-6">
+        <div className="mb-2 text-orange-500 font-semibold text-xl">
+          Year: 2011 — {yearRange.toLocaleString()}
         </div>
+        <div className="relative">
+          <div className="absolute h-2 bg-orange-500 left-0 right-0 top-1/2 -translate-y-1/2 rounded-full">
+            <div
+              className="absolute h-full bg-orange-500 left-0"
+              style={{
+                width: `${((yearRange - 2011) / (2025 - 2011)) * 100}%`,
+              }}
+            ></div>
+          </div>
+          <input
+            type="range"
+            min="2011"
+            max="2025"
+            value={yearRange}
+            onChange={(e) => setYearRange(parseInt(e.target.value))}
+            className="w-full h-2 appearance-none bg-transparent cursor-pointer relative z-10 [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-6 [&::-webkit-slider-thumb]:h-6 [&::-webkit-slider-thumb]:bg-orange-500 [&::-webkit-slider-thumb]:rounded-full [&::-moz-range-thumb]:w-6 [&::-moz-range-thumb]:h-6 [&::-moz-range-thumb]:bg-orange-500 [&::-moz-range-thumb]:border-0 [&::-moz-range-thumb]:rounded-full"
+          />
+        </div>
+      </div>
+    </div>
 
-
-
-
-
-        <div className="W-[100%] p-6 bg-white rounded-lg shadow-sm ">
-      <h2 className="text-3xl font-semibold mb-4 text-gray-800">Featured</h2>
+    <div className="W-[100%] p-6 bg-transparent border border-orange-500 rounded-lg shadow-sm shadow-white">
+      <h2 className="text-3xl font-semibold mb-4 text-gray-200">Featured</h2>
       <div className="space-y-3">
         {features.map((feature) => (
-          <label 
+          <label
             key={feature}
             className="flex items-center space-x-3 cursor-pointer group"
           >
@@ -371,34 +364,18 @@ const Drop = () => {
               type="checkbox"
               checked={selectedFeatures.has(feature)}
               onChange={() => handleCheckboxChange(feature)}
-              className="w-4 h-4 text-gray-600 border-gray-300 rounded focus:ring-gray-500 cursor-pointer checkbox"
+              className="w-4 h-4 text-gray-200 border-gray-300 rounded focus:ring-orange-500 cursor-pointer checkbox"
             />
-            <span className=" featured-container text-[1.3rem]  text-gray-600 group-hover:text-gray-800">
+            <span className="featured-container text-[1.3rem] text-gray-200 group-hover:text-orange-500">
               {feature}
             </span>
           </label>
         ))}
       </div>
     </div>
+  </div>
+</div>
 
-
-
-    
-          </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-        </div>
 
 
 
@@ -408,7 +385,7 @@ const Drop = () => {
 
 {/* CARDS CONTAINER  */}
 
-<div className='w-[75%] h-full cards-parent-container'>
+<div className='w-[70%] h-full cards-parent-container'>
 
 
 {cars.map((car, index) => (
@@ -435,6 +412,16 @@ const Drop = () => {
 };
 
 export default Drop;
+
+
+
+
+
+
+
+
+
+
 
 
 

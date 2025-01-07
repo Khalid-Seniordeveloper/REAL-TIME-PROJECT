@@ -39,10 +39,10 @@ body{
     background-repeat: no-repeat;
 }
 .cards-parent-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-padding-left: 2.6rem;
-row-gap: 3rem;
+ display: flex;
+ flex-wrap: wrap;
+ justify-content: center;
+ gap: 2rem;
   }
   .Selectors{
     width: 24.3rem;
@@ -104,6 +104,12 @@ row-gap: 3rem;
         font-size: 1.5rem;
         padding-left: 3.9rem;
     }
+    .cards-container{
+        width: 26rem;
+    }
+    .drop-main-container{
+        gap: 0;
+    }
  
 }
 @media(max-width : 936px){
@@ -124,10 +130,7 @@ row-gap: 3rem;
 .previous-btn{
     margin-left: 0.6rem;
 }
-.cards-parent-container{
-    grid-template-columns: repeat(2 , 1fr);
-    padding-left: 8rem;
-}
+
 }
 @media(max-width : 768px){
 .next-btn{
@@ -158,6 +161,21 @@ row-gap: 3rem;
 .Selectors{
     width: 19.5rem;
 }
+.fields-container{
+    width: 40%;
+    background-color: red;
+}
+.cards-parent-container{
+    width: 60%;
+    margin-left: 5rem;
+    /* background-color: pink; */
+    column-gap: 3rem;
+    padding-left: 0;
+}
+.drop-main-container{
+    gap: 8rem;
+}
+
 
 }
 @media(max-width : 550px){
@@ -307,17 +325,14 @@ row-gap: 3rem;
    height: 2.2rem;
 }
 .fields-container{
-    width: 40%;
+    width: 50%;
 }
-.cards-parent-container{
-    width: 40%;
+.cards-container{
+    width: 34rem;
 }
-
 }
 @media(max-width: 376px){
-    .fields-container {
-        width: 47% ;
-    }
+
     .cards-parent-container {
         width: 41%;
     }
@@ -336,9 +351,20 @@ row-gap: 3rem;
     .navbar-container{
         gap: 7rem;
     }
+    .fields-container{
+        width: 60%;
+    }
+    .cards-parent-container{
+        width: 40%;
+        position: relative;
+        right:5rem;
+    }
+    .cards-container{
+        width: 28rem;
+    }
  }
 
- @media(max-width : 320px){
+ @media(max-width : 321px){
     .navbar-container{
         gap: 5.7rem;
     }
@@ -354,12 +380,20 @@ row-gap: 3rem;
         margin-top: -1rem;
     }
     .fields-container{
-        width: 46%;
+        width: 60%;
+        /* margin-left: -5rem; */
     }
     .cards-parent-container{
-        width: 46%;
+        width: 40%;
+        /* margin-left: -5rem; */
+        position: relative;
+        right: 5.5rem;
     }
     .navbar-container{
         gap: 4rem;
     }
+    .cards-container{
+        width: 25rem;
+    }
+
  }

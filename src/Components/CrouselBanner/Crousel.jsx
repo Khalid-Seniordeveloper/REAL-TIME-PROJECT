@@ -76,8 +76,12 @@ const Crousel = () => {
             style={{
               position: 'absolute',
               left: 0,
-              transform: `translateX(${(index - currentIndex) * 100}%)`,
+              transform: `translateX(${(index - currentIndex) * 100}%) translateY(${
+                index === currentIndex ? '0px' : '10px'
+              })`,
+              transition: 'transform 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55)',
             }}
+            
           >
             <div
               className={`absolute w-full text-center text-white z-10 ${
