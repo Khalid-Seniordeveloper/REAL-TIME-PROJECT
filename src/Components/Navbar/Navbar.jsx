@@ -73,7 +73,7 @@ const Navbar = () => {
   {/* Login Panel */}
   <div
     className={`fixed top-0 right-0 h-full bg-black text-white z-50 transform transition-all duration-500 ${
-   isLoginOpen ? 'translate-x-0 w-[325px]' : 'translate-x-full w-0 opacity-0'
+   isLoginOpen ? 'translate-x-0 w-[325px] login-panel' : 'translate-x-full w-0 opacity-0'
  }`}
   >
 
@@ -122,7 +122,7 @@ const Navbar = () => {
   {/* Signup Panel */}
   <div
     className={`fixed top-0 right-0 h-full bg-black text-white z-50 transform transition-all duration-500 ${
-   isSignupOpen ? 'translate-x-0 w-[325px]' : 'translate-x-full w-0 opacity-0'
+   isSignupOpen ? 'translate-x-0 w-[325px] login-panel' : 'translate-x-full w-0 opacity-0'
  }`}
   >
     <button onClick={closePanel} className="absolute top-4 right-4 text-white hover:text-red-500">
@@ -174,7 +174,7 @@ const Navbar = () => {
 
 
 
-            <button className="navbar-btn flex items-center justify-center px-6 py-4 bg-transparent text-white font-semibold border-2 border-transparent rounded-lg relative overflow-hidden group transition-all duration-500">
+            <button className="navbar-btn flex items-center justify-center px-3 py-4 bg-transparent text-white font-semibold border-2 border-transparent rounded-lg relative overflow-hidden group transition-all duration-500">
               <span className="absolute inset-0 bg-gradient-to-r from-red-500 to-yellow-400 group-hover:from-yellow-400 group-hover:to-red-500 transition-all duration-700"></span>
               <span className="relative z-10 text-[1.2rem] listing">Add Listing</span>
             </button>

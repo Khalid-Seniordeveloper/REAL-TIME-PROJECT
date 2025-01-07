@@ -42,7 +42,7 @@ padding-left: 2.6rem;
 row-gap: 3rem;
   }
   .Selectors{
-    width: 24.7rem;
+    width: 24.3rem;
 }
 
 
@@ -228,12 +228,15 @@ row-gap: 3rem;
         margin-left: 4rem;
     }
   .next-btn{
-    margin-right: 5rem;
+    margin-right: 5.7rem;
     margin-bottom: 0.2rem;
   } 
   .Selectors{
     width: 26rem;
     height:  6rem;
+  }
+  .login-panel{
+    width: 100%;
   }
 .selector-container{
  display: grid;
@@ -324,6 +327,12 @@ row-gap: 3rem;
         margin-top: 4.1rem;
 
     }
+    .listing{
+        font-size: 2rem;
+    }
+    .navbar-container{
+        gap: 7rem;
+    }
  }
 
  @media(max-width : 320px){
@@ -346,5 +355,8 @@ row-gap: 3rem;
     }
     .cards-parent-container{
         width: 46%;
+    }
+    .navbar-container{
+        gap: 4rem;
     }
  }
