@@ -5,6 +5,9 @@
 html{
     font-size: 62.5%;
 }
+body{
+    background-color: black;
+}
 @font-face {
     font-family: 'Poppins';
     src: url('./Fonts/Poppins-SemiBold.ttf') format('truetype');
