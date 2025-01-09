@@ -8,6 +8,10 @@ html{
 body{
     background-color: black;
 }
+.footer-icon{
+    border: 1.5px solid #46d983;
+    color: green;
+}
 @font-face {
     font-family: 'Poppins';
     src: url('./Fonts/Poppins-SemiBold.ttf') format('truetype');
@@ -47,12 +51,40 @@ body{
   .Selectors{
     width: 24.3rem;
 }
+.footer-main-container{
+    border-top: 1px solid white;
+}
 
+.faq-main-container{
+    margin-top: 4rem;
+    margin-bottom: 4rem;
 
-
+}
+.about-card-container{
+    border: 0.5rem solid red;
+    background-color: transparent;
+}
 /* Animation  */
 
-
+.main-progress-container{
+    border-right: 1px solid white;
+}
+.main-container-of-progress{
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+}
+.contact-field{
+    border: 0;
+    padding: 1.6rem;
+    width: 80%;
+    border-radius: 0.5rem;
+    color: white ;
+    font-size: 1.4rem;
+    background-color: transparent;
+    border: 2px solid red;
+}
 .flip-diagonal-1-tr {
 	-webkit-animation: flip-diagonal-1-tr 0.4s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
 	        animation: flip-diagonal-1-tr 0.4s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
@@ -110,7 +142,9 @@ body{
     .drop-main-container{
         gap: 0;
     }
- 
+    .footer-main-container{
+gap: 40rem;
+    }
 }
 @media(max-width : 936px){
     html{
@@ -175,7 +209,16 @@ body{
 .drop-main-container{
     gap: 8rem;
 }
-
+.footer-main-container{
+    gap: 25rem;
+}
+.faq-image{
+    display: none;
+}
+.contact-field-container{
+    gap: 3rem;
+    flex-wrap: wrap;
+}
 
 }
 @media(max-width : 550px){
@@ -205,12 +248,27 @@ body{
     .register{
         display: none;
     }
+    .footer-main-container{
+        gap: 2rem;
+        height: 9rem;
+    }
    .cards-parent-container{
     padding: 1.5rem;
    }
+   .main-container-of-progress{
+    display: grid;
+ grid-template-columns: repeat(1 , 1fr);
+ padding-left: 2rem;
+ row-gap: 4rem;
+}
+.main-progress-container{
+    border-right: 0;
+}
   
 }
 @media(max-width : 430px){
+
+
     html{
         font-size: 37%;
     }
@@ -231,7 +289,19 @@ body{
     display: block;
     margin-left: 2rem;   
 }
+.footer-main-container{
+    gap: 1rem;
+  flex-wrap: wrap;
+  height: 12rem;
+}
 
+
+.designer{
+    font-size: 2.4rem;
+}
+
+   
+  
    .login{
     display: none;
    }
@@ -330,6 +400,16 @@ body{
 .cards-container{
     width: 34rem;
 }
+.contact-field{
+    font-size: 2rem;
+}
+.timing{
+    font-size: 2.7rem;
+
+}
+.contact-field-container{
+    padding: 0 2rem;
+}
 }
 @media(max-width: 376px){
 
@@ -361,6 +441,17 @@ body{
     }
     .cards-container{
         width: 28rem;
+    }
+    .faq-question-container{
+        width: 48rem;
+    }
+    .faq-main-container{
+        gap: 0;
+    }
+    .faq-qa-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
     }
  }
 
@@ -395,5 +486,7 @@ body{
     .cards-container{
         width: 25rem;
     }
-
+    .designer{
+        font-size: 2rem;
+    }
  }

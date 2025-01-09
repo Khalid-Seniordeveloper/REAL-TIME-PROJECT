@@ -79,7 +79,7 @@ const Crousel = () => {
               transform: `translateX(${(index - currentIndex) * 100}%) translateY(${
                 index === currentIndex ? '0px' : '10px'
               })`,
-              transition: 'transform 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55)',
+              transition: 'transform npm cubic-bezier(0.68, -0.55, 0.27, 1.55)',
             }}
             
           >

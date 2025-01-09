@@ -4,6 +4,7 @@ import ListCar from '../../assets/ListCar.png';
 // import "../../Font/Poppins/Poppins-SemiBold.ttf";
 import { ChevronDown,  Search, Menu,LogIn ,CircleUserRound ,  Home, User2, Briefcase,TableOfContents , MessageCircle, ChevronRight, Car } from 'lucide-react';
 import { X, Mail, Lock, User , KeyRound } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -32,25 +33,28 @@ const Navbar = () => {
             <ul className="navigate-link text-[#ffffff] flex gap-[5rem] items-center justify-center font-semibold text-[1.9rem] ml-[9rem]">
               <li className="relative flex gap-[rem] group">
                 <span className="relative hover:cursor-pointer">
-                  Home
+                  <Link to="/">Home</Link>
                   <span className="absolute left-1/2 top-[3rem] transform -translate-x-1/2 w-0 h-[4px] bg-[#E63946] group-hover:w-full transition-all duration-300 ease-in-out"></span>
                 </span>
               </li>
               <li className="relative flex gap-[0.2rem] group">
                 <span className="relative hover:cursor-pointer">
-                  About
+                <Link to="/about">About</Link>
+
                   <span className="absolute top-[3rem] left-1/2 bottom-0 transform -translate-x-1/2 w-0 h-[4px] bg-[#E63946] group-hover:w-full transition-all duration-300 ease-in-out"></span>
                 </span>
               </li>
               <li className="relative flex gap-[0.2rem] group">
                 <span className="relative hover:cursor-pointer">
-                  Faq
+                <Link to="/faq">Faq</Link>
+
                   <span className="absolute top-[3rem] left-1/2 bottom-0 transform -translate-x-1/2 w-0 h-[4px] bg-[#E63946] group-hover:w-full transition-all duration-300 ease-in-out"></span>
                 </span>
               </li>
               <li className="relative flex gap-[0.2rem] group">
                 <span className="relative hover:cursor-pointer">
-                  Contact
+                <Link to="/contact">Contact</Link>
+
                   <span className="absolute top-[3rem] left-1/2 bottom-0 transform -translate-x-1/2 w-0 h-[4px] bg-[#E63946] group-hover:w-full transition-all duration-300 ease-in-out"></span>
                 </span>
               </li>
@@ -195,26 +199,40 @@ const Navbar = () => {
         {/* Mobile Menu */}
         <div className={`md:hidden absolute w-full bg-black transform transition-all duration-300 mt-[45rem] ease-in-out ${isOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-2 pointer-events-none'}`} style={{zIndex: 9999}}>
           <div className="flex flex-col space-y-4 gap-[1rem] p-4">
-            <a href="#" className="group flex items-center space-x-2 text-white hover:text-red-500 transition-all duration-300 transform hover:translate-x-2">
+        <Link to="/">
+        
+        <a href="#" className="group flex items-center space-x-2 text-white hover:text-red-500 transition-all duration-300 transform hover:translate-x-2">
               <Home size={22} />
               <span className='text-[2rem]'>Home</span>
               <ChevronRight size={20} className="ml-auto opacity-0 group-hover:opacity-100" />
             </a>
-            <a href="#" className="group flex items-center space-x-2 text-white hover:text-red-500 transition-all duration-300 transform hover:translate-x-2">
+        
+        </Link>
+     <Link to="/about">
+     
+     <a href="#" className="group flex items-center space-x-2 text-white hover:text-red-500 transition-all duration-300 transform hover:translate-x-2">
               <User2 size={22} />
               <span className='text-[2rem]'>About</span>
               <ChevronRight size={20} className="ml-auto opacity-0 group-hover:opacity-100" />
             </a>
-            <a href="#" className="group flex items-center space-x-2 text-white hover:text-red-500 transition-all duration-300 transform hover:translate-x-2">
+     </Link>
+    <Link to="/faq">
+    
+    <a href="#" className="group flex items-center space-x-2 text-white hover:text-red-500 transition-all duration-300 transform hover:translate-x-2">
             <TableOfContents  size={22} />
               <span className='text-[2rem]'>Faq</span>
               <ChevronRight size={20} className="ml-auto opacity-0 group-hover:opacity-100" />
             </a>
-            <a href="#" className="group flex items-center space-x-2 text-white hover:text-red-500 transition-all duration-300 transform hover:translate-x-2">
+    
+    </Link>
+<Link to="/contact">
+
+<a href="#" className="group flex items-center space-x-2 text-white hover:text-red-500 transition-all duration-300 transform hover:translate-x-2">
               <MessageCircle size={22} />
               <span className='text-[2rem]'>Contact</span>
               <ChevronRight size={20} className="ml-auto opacity-0 group-hover:opacity-100" />
             </a>
+</Link>
             <a
   href="#"
   className="group flex items-center space-x-2 text-white hover:text-red-500 transition-all duration-300 transform hover:translate-x-2"
