@@ -80,6 +80,23 @@ const Drop = () => {
     'High-quality paint'
   ];
 
+
+
+  const singleSelect = [
+    'A/C: Front',
+    'Backup Camera',
+
+    'Navigation',
+    'Power Locks',
+        'Chrome-plated grill',
+    'Smart headlight cluster',
+    'Premium wheels',
+    'Body character lines',
+    'High-quality paint'
+
+  ];
+
+
   const handleCheckboxChange = (feature) => {
     const newSelected = new Set(selectedFeatures);
     if (newSelected.has(feature)) {
@@ -217,7 +234,7 @@ const Drop = () => {
     <>
       <div className='w-[100%] h-full flex justify-center gap-[2rem]   drop-main-container mt-[3rem] font-[Poppins]'>
         {/* First Column */}
-        <div className="w-[30%] h-full bg-[black] fields-container">
+        <div className="w-[20%] h-full bg-[black] fields-container">
   <div className="w-[100%] p-6 bg-black rounded-md shadow-lg border border-orange-500 shadow-white">
     <div className="flex justify-between items-center mb-6">
       <h2 className="text-3xl font-semibold text-gray-200">Filters and Sort</h2>
@@ -373,6 +390,33 @@ const Drop = () => {
         ))}
       </div>
     </div>
+
+
+    <div className="W-[100%] p-6 bg-transparent border border-orange-500 rounded-lg shadow-sm shadow-white">
+  <h2 className="text-3xl font-semibold mb-4 text-gray-200">Single Select</h2>
+  <div className="space-y-3">
+    {singleSelect.map((singleOption) => (  // Use singleSelect instead of features
+      <label
+        key={singleOption}
+        className="flex items-center space-x-3 cursor-pointer group"
+      >
+        <input
+          type="radio"
+          checked={selectedFeatures.has(singleOption)}
+          onChange={() => handleCheckboxChange(singleOption)}
+          className="w-4 h-4 text-gray-200 border-gray-300 rounded focus:ring-orange-500 cursor-pointer checkbox"
+        />
+        <span className="featured-container text-[1.3rem] text-gray-200 group-hover:text-orange-500">
+          {singleOption}
+        </span>
+      </label>
+    ))}
+  </div>
+</div>
+
+
+
+
   </div>
 </div>
 
@@ -385,7 +429,7 @@ const Drop = () => {
 
 {/* CARDS CONTAINER  */}
 
-<div className='w-[70%] h-full cards-parent-container'>
+<div className='w-[80%] h-full cards-parent-container'>
 
 
 {cars.map((car, index) => (

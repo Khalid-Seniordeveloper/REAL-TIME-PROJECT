@@ -23,14 +23,14 @@ const Navbar = () => {
 
   return (
     <header>
-      <div className="navbar-container font-[Poppins] w-[100%] h-[10rem] bg-[black] flex items-center justify-center gap-[13rem]">
+      <div className="navbar-container font-[Poppins] w-[100%] h-[10rem] bg-[black] flex items-center justify-center gap-[14rem]">
         <div>
           <img src={Logo} alt="Logo" className="w-[20rem] logo" />
         </div>
 
 
         <div className=''>
-            <ul className="navigate-link text-[#ffffff] flex gap-[5rem] items-center justify-center font-semibold text-[1.9rem] ml-[9rem]">
+            <ul className="navigate-link text-[#ffffff] flex gap-[1.7rem] items-center justify-center font-semibold text-[1.9rem] ml-[12rem]">
               <li className="relative flex gap-[rem] group">
                 <span className="relative hover:cursor-pointer">
                   <Link to="/">Home</Link>
@@ -68,7 +68,7 @@ const Navbar = () => {
           <div className="flex items-center gap-[0.5rem]">
           <button
     onClick={() => setIsLoginOpen(true)}
-    className="login px-6 py-2 bg-transparent text-white font-medium rounded-lg border-2 border-[#E63946] relative overflow-hidden group transition-all duration-500 text-[1.7rem]"
+    className="login px-6 py-2 bg-transparent text-white font-medium rounded-lg border-2 border-[#E63946] relative overflow-hidden group transition-all duration-500 text-[1.9rem]"
   >
     <span className="absolute left-0 top-0 w-full h-full bg-gradient-to-r from-red-500 to-white transform scale-x-0 group-hover:scale-x-100 transition-all duration-700 origin-left"></span>
     <span className="relative group-hover:text-white">Login</span>
@@ -104,7 +104,7 @@ const Navbar = () => {
         className="signin-fields w-full p-[1rem] pl-[3.3rem] bg-gray-800 text-white rounded text-[1.2rem] focus:outline-none"
       />
       </div>
-      <button className="w-[30%] bg-red-600 py-2 py-[1rem]  rounded hover:bg-red-700 transition-all text-[1.2rem] signin-btn">
+      <button className="w-[30%] bg-red-600 py-2 py-[1rem]  rounded hover:bg-red-700 transition-all text-[1.9rem] signin-btn">
         Login
       </button>
     </div>
@@ -117,7 +117,7 @@ const Navbar = () => {
 
   <button
     onClick={() => setIsSignupOpen(true)}
-    className="register px-6 py-2 bg-transparent text-white font-medium rounded-lg border-2 border-[#E63946] relative overflow-hidden group transition-all duration-500 text-[1.7rem] hover:bg-black"
+    className="register px-6 py-2 bg-transparent text-white font-medium rounded-lg border-2 border-[#E63946] relative overflow-hidden group transition-all duration-500 text-[1.9rem] hover:bg-black"
   >
     <span className="absolute left-0 top-0 w-full h-full bg-gradient-to-r from-red-500 to-white transform scale-x-0 group-hover:scale-x-100 transition-all duration-700 origin-left"></span>
     <span className="relative group-hover:text-white">Register</span>
@@ -178,9 +178,9 @@ const Navbar = () => {
 
 
 
-            <button className="navbar-btn flex items-center justify-center px-3 py-4 bg-transparent text-white font-semibold border-2 border-transparent rounded-lg relative overflow-hidden group transition-all duration-500">
+            <button className="navbar-btn flex items-center justify-center px-3 py-[0.8rem] bg-transparent text-white font-semibold border-2 border-transparent rounded-lg relative overflow-hidden group transition-all duration-500">
               <span className="absolute inset-0 bg-gradient-to-r from-red-500 to-yellow-400 group-hover:from-yellow-400 group-hover:to-red-500 transition-all duration-700"></span>
-              <span className="relative z-10 text-[1.2rem] listing">Add Listing</span>
+              <span className="relative z-10 text-[1.9rem] listing">Add Listing</span>
             </button>
           </div>
           

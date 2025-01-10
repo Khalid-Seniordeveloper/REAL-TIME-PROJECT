@@ -1,10 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { ChevronDown, Search, RefreshCcw } from 'lucide-react';
 import Drop from '../DropDown/Drop';
 
 const Selector = () => {
-    
-    const initialSelectors = ([
+  const initialSelectors = [
     {
       id: 'make',
       placeholder: 'Infinity',
@@ -29,9 +28,9 @@ const Selector = () => {
       options: ['Sedan', 'Hatchback', 'SUV', 'Coupe'],
       selectedOption: '',
     },
-  ]);
-  const [selectors, setSelectors] = useState(initialSelectors)
+  ];
 
+  const [selectors, setSelectors] = useState(initialSelectors);
   const [openSelector, setOpenSelector] = useState(null);
   const [isDropOpen, setIsDropOpen] = useState(false);
 
@@ -52,26 +51,31 @@ const Selector = () => {
     setOpenSelector(null); // Close the dropdown after selection
   };
 
-  // Find Cars Button
-  const dropOpen = () => {
+  // Check selected values to determine if 'Drop' should be shown
+  useEffect(() => {
     const selectedMake = selectors.find((selector) => selector.id === 'make');
     const selectedModel = selectors.find((selector) => selector.id === 'model');
     const selectedDoor = selectors.find((selector) => selector.id === 'door');
     const selectedType = selectors.find((selector) => selector.id === 'type');
 
-    if (selectedMake?.selectedOption === 'Toyota' || selectedModel?.selectedOption === 'SUV' || selectedDoor?.selectedOption === '4 Door' || selectedType?.selectedOption === 'Hatchback' ) {
+    if (
+      selectedMake?.selectedOption === 'Toyota' ||
+      selectedModel?.selectedOption === 'SUV' ||
+      selectedDoor?.selectedOption === '4 Door' ||
+      selectedType?.selectedOption === 'Hatchback'
+    ) {
       setIsDropOpen(true);
     } else {
-      setIsDropOpen(false); 
-      console.log('Please select Toyota to proceed!');
+      setIsDropOpen(false);
     }
-  };
+  }, [selectors]); // Runs whenever `selectors` state changes
 
-  const backToNormal = ()=>{
+  // Reset to initial state
+  const backToNormal = () => {
     setIsDropOpen(false);
     setSelectors(initialSelectors);
   };
-  
+
   return (
     <>
       <div>
@@ -95,37 +99,35 @@ const Selector = () => {
                     />
                   </button>
                   {openSelector === selector.id && (
-  <div className="absolute w-full top-[-100%] mb-2 bg-gray-800 border border-gray-700 backdrop-blur-sm rounded-lg shadow-lg z-10">
-    <select
-      className="w-full px-4 py-2 bg-gray-800 text-[1.6rem] text-gray-300 border-none rounded-lg focus:ring-2 focus:ring-gray-500"
-      value={selector.selectedOption}
-      onChange={(e) => handleOptionSelect(selector.id, e.target.value)}
-    >
-      <option value="" disabled>
-        Select an option
-      </option>
-      {selector.options.map((option) => (
-        <option
-          key={option}
-          value={option}
-          className="text-gray-300 bg-gray-800 hover:bg-gray-700/50"
-        >
-          {option}
-        </option>
-      ))}
-    </select>
-  </div>
-)}
-
+                    <div className="absolute w-full top-[-100%] mb-2 bg-gray-800 border border-gray-700 backdrop-blur-sm rounded-lg shadow-lg z-10">
+                      <select
+                        className="w-full px-4 py-2 bg-gray-800 text-[1.6rem] text-gray-300 border-none rounded-lg focus:ring-2 focus:ring-gray-500"
+                        value={selector.selectedOption}
+                        onChange={(e) => handleOptionSelect(selector.id, e.target.value)}
+                      >
+                        <option value="" disabled>
+                          Select an option
+                        </option>
+                        {selector.options.map((option) => (
+                          <option
+                            key={option}
+                            value={option}
+                            className="text-gray-300 bg-gray-800 hover:bg-gray-700/50"
+                          >
+                            {option}
+                          </option>
+                        ))}
+                      </select>
+                    </div>
+                  )}
                 </div>
               ))}
 
               {/* Buttons */}
               <div className="flex items-center gap-4">
-                <RefreshCcw onClick={backToNormal} className='hover: cursor-pointer' />
+                <RefreshCcw onClick={backToNormal} className="hover: cursor-pointer" />
                 <button
                   className="find-cars px-12 py-4 bg-orange-500 text-white text-[1.2rem] rounded-lg flex items-center gap-2 hover:bg-orange-600 transition-colors duration-300"
-                  onClick={dropOpen}
                 >
                   <span>Find cars</span>
                   <Search className="w-5 h-5 search" />

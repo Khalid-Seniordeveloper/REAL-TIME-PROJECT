@@ -46,7 +46,7 @@ body{
  display: flex;
  flex-wrap: wrap;
  justify-content: center;
- gap: 2rem;
+ gap: 1.5rem;
   }
   .Selectors{
     width: 24.3rem;
@@ -195,17 +195,7 @@ gap: 40rem;
 .Selectors{
     width: 19.5rem;
 }
-.fields-container{
-    width: 40%;
-    background-color: red;
-}
-.cards-parent-container{
-    width: 60%;
-    margin-left: 5rem;
-    /* background-color: pink; */
-    column-gap: 3rem;
-    padding-left: 0;
-}
+
 .drop-main-container{
     gap: 8rem;
 }
@@ -219,7 +209,9 @@ gap: 40rem;
     gap: 3rem;
     flex-wrap: wrap;
 }
-
+.navbar-container{
+    gap: 4rem;
+}
 }
 @media(max-width : 550px){
     html{
@@ -252,9 +244,7 @@ gap: 40rem;
         gap: 2rem;
         height: 9rem;
     }
-   .cards-parent-container{
-    padding: 1.5rem;
-   }
+
    .main-container-of-progress{
     display: grid;
  grid-template-columns: repeat(1 , 1fr);
@@ -339,22 +329,8 @@ gap: 40rem;
     width: 100%;
 
 }
-.cards-parent-container{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-    width: 50%;
-    font-size: 1.1rem;
-    /* padding-left: 5rem; */
-}
-.fields-container{
-    width: 50%;
-    font-size: 1.7rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
+
+
 .featured-container{
     font-size: 2rem;
 }
@@ -410,6 +386,27 @@ gap: 40rem;
 .contact-field-container{
     padding: 0 2rem;
 }
+.fields-container{
+    width: 100%;
+    display: flex;
+    font-size: 2rem;
+}
+.drop-main-container{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 4rem;
+}
+.cards-parent-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 7rem;
+
+}
+.cards-container{
+    width: 80%;
+    font-size: 2rem;
+}
 }
 @media(max-width: 376px){
 
@@ -434,11 +431,7 @@ gap: 40rem;
     .fields-container{
         width: 60%;
     }
-    .cards-parent-container{
-        width: 40%;
-        position: relative;
-        right:5rem;
-    }
+
     .cards-container{
         width: 28rem;
     }
@@ -452,6 +445,27 @@ gap: 40rem;
     width: 100%;
     display: flex;
     justify-content: center;
+    }
+    .fields-container{
+        width: 100%;
+        display: flex;
+        font-size: 2rem;
+    }
+    .drop-main-container{
+        display: flex;
+        flex-wrap: wrap;
+        padding: 0 4rem;
+    }
+    .cards-parent-container{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-top: 7rem;
+
+    }
+    .cards-container{
+        width: 80%;
+        font-size: 2rem;
     }
  }
 
@@ -474,12 +488,7 @@ gap: 40rem;
         width: 60%;
         /* margin-left: -5rem; */
     }
-    .cards-parent-container{
-        width: 40%;
-        /* margin-left: -5rem; */
-        position: relative;
-        right: 5.5rem;
-    }
+   
     .navbar-container{
         gap: 4rem;
     }
@@ -487,6 +496,29 @@ gap: 40rem;
         width: 25rem;
     }
     .designer{
+        font-size: 2rem;
+    }
+    .fields-container{
+        width: 100%;
+        display: flex;
+        font-size: 2rem;
+    }
+    .drop-main-container{
+        display: flex;
+        flex-wrap: wrap;
+        padding: 0 4rem;
+    }
+    .cards-parent-container{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-top: 7rem;
+        /* margin-left: 10rem; */
+
+
+    }
+    .cards-container{
+        width: 100%;
         font-size: 2rem;
     }
  }
