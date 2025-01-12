@@ -23,6 +23,13 @@ const Selector = () => {
       selectedOption: '',
     },
     {
+      id: 'color',
+      placeholder: 'Red',
+      options: ['Red', 'Blue', 'Green', 'Black', 'White'],
+      selectedOption: '',
+    },
+
+    {
       id: 'type',
       placeholder: 'Sedan',
       options: ['Sedan', 'Hatchback', 'SUV', 'Coupe'],
@@ -57,12 +64,16 @@ const Selector = () => {
     const selectedModel = selectors.find((selector) => selector.id === 'model');
     const selectedDoor = selectors.find((selector) => selector.id === 'door');
     const selectedType = selectors.find((selector) => selector.id === 'type');
+    const selectedColor = selectors.find((selector) => selector.id === 'color');
+
 
     if (
       selectedMake?.selectedOption === 'Toyota' ||
       selectedModel?.selectedOption === 'SUV' ||
       selectedDoor?.selectedOption === '4 Door' ||
-      selectedType?.selectedOption === 'Hatchback'
+      selectedType?.selectedOption === 'Hatchback' ||
+      selectedColor?.selectedOption === 'Blue'
+
     ) {
       setIsDropOpen(true);
     } else {
@@ -126,12 +137,7 @@ const Selector = () => {
               {/* Buttons */}
               <div className="flex items-center gap-4">
                 <RefreshCcw onClick={backToNormal} className="hover: cursor-pointer" />
-                <button
-                  className="find-cars px-12 py-4 bg-orange-500 text-white text-[1.2rem] rounded-lg flex items-center gap-2 hover:bg-orange-600 transition-colors duration-300"
-                >
-                  <span>Find cars</span>
-                  <Search className="w-5 h-5 search" />
-                </button>
+
               </div>
             </div>
           </div>

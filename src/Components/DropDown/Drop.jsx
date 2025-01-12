@@ -8,6 +8,7 @@ import carfour from '../../assets/car-four.jpg'
 import carfive from '../../assets/car-five.jpg'
 import carsix from '../../assets/car-six.jpg'
 import carseven from '../../assets/car-seven.jpg'
+import Footer from '../Footer/Footer';
 
 const Drop = () => {
   const [openDropdown, setOpenDropdown] = useState(null);
@@ -84,7 +85,7 @@ const Drop = () => {
 
   const singleSelect = [
     'A/C: Front',
-    'Backup Camera',
+
 
     'Navigation',
     'Power Locks',
@@ -129,7 +130,7 @@ const Drop = () => {
       image: cartwo
     },
     {
-      name: "2020 Mercedes-Benz C-Class",
+      name: "2020 Mercedes-Benz",
       model: "Coupe",
       kms: "30,000 kms",
       fuel: "Electric",
@@ -189,7 +190,7 @@ const Drop = () => {
       image: carone
     },
     {
-      name: "2020 Jeep Wrangler Unlimited",
+      name: "2020 Jeep Wrangler",
       model: "SUV",
       kms: "40,000 kms",
       fuel: "Petrol",
@@ -229,12 +230,15 @@ const Drop = () => {
       image: carfive
     }
   ];
-  
+  const [selectedOption, setSelectedOption] = useState('');
+  const handleRadioChange = (option) => {
+    setSelectedOption(option); // Update the selected option
+  };
   return (
     <>
-      <div className='w-[100%] h-full flex justify-center gap-[2rem]   drop-main-container mt-[3rem] font-[Poppins]'>
+      <div className='mb-[6rem] w-[100%] h-full flex justify-center gap-[2rem]   drop-main-container mt-[3rem] font-[Poppins]'>
         {/* First Column */}
-        <div className="w-[20%] h-full bg-[black] fields-container">
+        <div className="w-[25%] h-full bg-[black] fields-container text-[1.4rem]">
   <div className="w-[100%] p-6 bg-black rounded-md shadow-lg border border-orange-500 shadow-white">
     <div className="flex justify-between items-center mb-6">
       <h2 className="text-3xl font-semibold text-gray-200">Filters and Sort</h2>
@@ -287,7 +291,7 @@ const Drop = () => {
     {/* Price Range Filter */}
     <div className="mt-6 mb-6">
       <div className="flex justify-between mb-2">
-        <span className="text-orange-600 font-semibold text-xl">Price:</span>
+        <span className="text-orange-600 font-semibold text-3xl">Price:</span>
         <span className="text-gray-200">
           ${priceRange[0]} — ${priceRange[1]}
         </span>
@@ -345,7 +349,7 @@ const Drop = () => {
     <div className="w-[100%] p-4 bg-transparent rounded-lg">
       {/* Year Range Slider */}
       <div className="mt-[0.6rem] mb-6">
-        <div className="mb-2 text-orange-500 font-semibold text-xl">
+        <div className="mb-2 text-orange-500 font-semibold text-2xl">
           Year: 2011 — {yearRange.toLocaleString()}
         </div>
         <div className="relative">
@@ -369,21 +373,21 @@ const Drop = () => {
       </div>
     </div>
 
-    <div className="W-[100%] p-6 bg-transparent border border-orange-500 rounded-lg shadow-sm shadow-white">
-      <h2 className="text-3xl font-semibold mb-4 text-gray-200">Featured</h2>
+    <div className="W-[100%] p-6  bg-transparent border border-orange-500 rounded-lg shadow-sm shadow-white">
+      <h2 className="text-4xl  font-semibold mb-4 text-gray-200">Featured</h2>
       <div className="space-y-3">
         {features.map((feature) => (
           <label
             key={feature}
-            className="flex items-center space-x-3 cursor-pointer group"
+            className="flex items-center space-x-3 cursor-pointer group "
           >
             <input
               type="checkbox"
               checked={selectedFeatures.has(feature)}
               onChange={() => handleCheckboxChange(feature)}
-              className="w-4 h-4 text-gray-200 border-gray-300 rounded focus:ring-orange-500 cursor-pointer checkbox"
+              className="w-6 h-6 text-gray-200  border-gray-300 rounded focus:ring-orange-500 cursor-pointer checkbox"
             />
-            <span className="featured-container text-[1.3rem] text-gray-200 group-hover:text-orange-500">
+            <span className="featured-container text-[1.7rem] text-gray-200 group-hover:text-orange-500">
               {feature}
             </span>
           </label>
@@ -392,27 +396,30 @@ const Drop = () => {
     </div>
 
 
-    <div className="W-[100%] p-6 bg-transparent border border-orange-500 rounded-lg shadow-sm shadow-white">
-  <h2 className="text-3xl font-semibold mb-4 text-gray-200">Single Select</h2>
-  <div className="space-y-3">
-    {singleSelect.map((singleOption) => (  // Use singleSelect instead of features
-      <label
-        key={singleOption}
-        className="flex items-center space-x-3 cursor-pointer group"
-      >
-        <input
-          type="radio"
-          checked={selectedFeatures.has(singleOption)}
-          onChange={() => handleCheckboxChange(singleOption)}
-          className="w-4 h-4 text-gray-200 border-gray-300 rounded focus:ring-orange-500 cursor-pointer checkbox"
-        />
-        <span className="featured-container text-[1.3rem] text-gray-200 group-hover:text-orange-500">
-          {singleOption}
-        </span>
-      </label>
-    ))}
-  </div>
-</div>
+    <div className="w-[100%] p-6 bg-transparent border border-orange-500 rounded-lg shadow-sm shadow-white">
+      <h2 className="text-4xl font-semibold mb-4 text-gray-200">Single Select</h2>
+      <div className="space-y-3">
+        {singleSelect.map((singleOption) => (
+          <label
+            key={singleOption}
+            className="flex items-center space-x-3 cursor-pointer group"
+          >
+            <input
+              type="radio"
+              name="singleSelectOption" // Ensure the name is the same for all radio buttons
+              value={singleOption}
+              checked={selectedOption === singleOption} // Compare with selectedOption
+              onChange={() => handleRadioChange(singleOption)} // Handle radio change
+              className="w-6 h-6 text-gray-200 border-gray-300 rounded focus:ring-orange-500 cursor-pointer"
+            />
+            <span className="featured-container text-[1.7rem] text-gray-200 group-hover:text-orange-500">
+              {singleOption}
+            </span>
+          </label>
+        ))}
+      </div>
+    </div>
+
 
 
 
@@ -429,7 +436,7 @@ const Drop = () => {
 
 {/* CARDS CONTAINER  */}
 
-<div className='w-[80%] h-full cards-parent-container'>
+<div className='w-[75%] h-full cards-parent-container'>
 
 
 {cars.map((car, index) => (
@@ -450,7 +457,8 @@ const Drop = () => {
 
         {/* Second Column */}
      
-      </div>
+  </div>
+      <Footer/>
     </>
   );
 };

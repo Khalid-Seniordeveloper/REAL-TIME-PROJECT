@@ -43,14 +43,18 @@ const PagesBanner = (props) => {
             </div>
 
             {/* Subtitle */}
-            <p className="text-white/90 text-2xl md:text-3xl max-w-2xl mx-auto">
+            <p className="text-white tracking-[0.2rem] font-[LightPoppins] text-2xl md:text-3xl max-w-2xl mx-auto">
             {props.para}
             </p>
 
             {/* CTA Button */}
-            <button className="px-12 py-4 bg-red-500 text-white rounded-full text-xl md:text-2xl font-semibold hover:bg-red-600 transform hover:scale-105 transition-all shadow-lg hover:shadow-red-500/30">
-              {props.btn}
-            </button>
+            <button className="relative px-16 py-7 bg-[transparent] btn-border text-white rounded-full text-4xl md:text-3xl font-semibold overflow-hidden group shadow-lg hover:shadow-red-500/30 transform hover:scale-105 transition-all">
+  <span className="absolute inset-0 bg-red-500 transform scale-x-0 group-hover:scale-x-100 transition-all duration-500 ease-in-out origin-left h-full"></span>
+  <span className="relative group-hover:text-black transition-colors duration-500 ease-in-out">
+    {props.btn}
+  </span>
+</button>
+
           </div>
         </div>
       </div>

@@ -50,7 +50,7 @@ const Faq = () => {
       <Navbar />
       <PagesBanner one="Frequently" two="Questions" three="And" four="Answers" para="Find answers to all your questions with our comprehensive FAQ section" btn="View More"/>
 
-      <div className="w-[100%] h-full flex justify-center gap-[2rem] font-[Poppins] faq-main-container">
+      <div className="w-[100%] h-full flex items-center justify-center gap-[2rem] font-[Poppins] faq-main-container">
         <div className="faq-image bg-[white] w-[30%] ">
           <img
             src={faq}
@@ -85,7 +85,7 @@ const Faq = () => {
                     activeIndex === index ? "max-h-[200px]" : "max-h-0"
                   }`}
                 >
-                  <div className="p-4 text-[white]">{faq.answer}</div>
+                  <div className="p-4 text-[white] tracking-[0.1rem] font-[LightPoppins]">{faq.answer}</div>
                 </div>
               </div>
             ))}

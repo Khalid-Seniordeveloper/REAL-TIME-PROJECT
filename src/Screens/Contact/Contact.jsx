@@ -20,7 +20,7 @@ const Contact = () => {
   {data.map((item) => {
     return (
       <ContactCard 
-        key={item.country}  // Adding a unique key for each item
+        key={item.country}  
         country={item.country} 
         num1={item.num1} 
         num2={item.num2} 
@@ -31,12 +31,12 @@ const Contact = () => {
 </div>
 
 
-<div className="w-full h-auto contact-field-container font-[Poppins] flex justify-center gap-[4rem] mt-[11rem] flex-wrap mb-[4rem]">
+<div className="w-full h-auto contact-field-container font-[Poppins] flex items-center justify-center gap-[3'ppprem] mt-[11rem] flex-wrap mb-[4rem]">
 
   {/* Left Section: Contact Info */}
   <div className="w-full md:w-[30%] h-full">
 
-    <h1 className="text-[2.9rem] text-white">Contact Us With Support Line</h1>
+    <h1 className="text-[2.3rem] text-white">Contact Us With Support Line</h1>
 
     <fieldset className="border p-[3rem] rounded-[1rem] mt-[2rem]">
       <legend className="ml-[0rem] text-red-500 text-[2.1rem]">To know more</legend>
@@ -53,7 +53,7 @@ const Contact = () => {
     </fieldset>
 
     <h2 className="text-[1.5rem] mt-[2rem] text-white timing">
-      <span className="text-red-500 ">N:B:</span> Customer support always open at 9 am to 6 pm.
+      <span className="text-red-500">N:B:</span> Customer support always open at 9 am to 6 pm.
     </h2>
   </div>
 
@@ -68,7 +68,7 @@ const Contact = () => {
       <input 
         type="text" 
         placeholder="Your name" 
-        className="contact-field placeholder-white focus:outline-none focus:border-2 focus:border-red-500 py-[1.5rem] text-[1.8rem]" 
+        className="contact-field placeholder-white  focus:outline-none focus:border-2 focus:border-red-500 py-[1.5rem] text-[1.8rem]" 
       />
     </div>
 
@@ -120,9 +120,12 @@ const Contact = () => {
     </div>
 
     {/* Submit Button */}
-    <button className="text-[1.8rem] text-red-500 p-[1.5rem] rounded-[0.7rem] border-2 border-solid border-red-500">
-      Submit
-    </button>
+    <button className="relative text-[1.8rem] text-white p-[1.5rem] rounded-[0.7rem] border-2 border-solid border-red-500 overflow-hidden group">
+  <span className="absolute inset-0 bg-red-500 transform scale-x-0 group-hover:scale-x-100 transition-all duration-500 ease-in-out origin-left h-full"></span>
+  <span className="relative group-hover:text-black transition-colors duration-500 ease-in-out">
+    Submit
+  </span>
+</button>
 
   </div>
 
