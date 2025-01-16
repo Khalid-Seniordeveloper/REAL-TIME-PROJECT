@@ -94,14 +94,14 @@ const Crousel = () => {
         <button
           title="Previous"
           onClick={prevSlide}
-          className="previous-btn absolute left-20 top-1/2 mt-[-5rem] ml-[1.6rem] bg-[#1f1f1f] text-red-500 hover:bg-[#333333] p-2 rounded-full transition-all duration-300 ease-in-out z-20"
+          className="previous-btn absolute left-20 top-1/2 mt-[-5rem] ml-[1.6rem] bg-[#1f1f1f] text-[#ffe73a] hover:bg-[#333333] p-2 rounded-full transition-all duration-300 ease-in-out z-20"
         >
           <ChevronLeft className="w-[5rem] h-[5rem] mr-[0.7rem] transition-transform duration-300 ease-in-out group-hover:scale-110 group-hover:text-white" />
         </button>
         <button
           title="Next"
           onClick={nextSlide}
-          className="next-btn absolute right-4 top-1/2 -translate-y-1/2 mt-[-1.3rem] mr-[3.7rem] bg-[#1f1f1f] text-red-500 hover:bg-[#333333] p-2 rounded-full transition-all duration-300 ease-in-out z-20"
+          className="next-btn absolute right-4 top-1/2 -translate-y-1/2 mt-[-1.3rem] mr-[3.7rem] bg-[#1f1f1f] text-[#ffe73a] hover:bg-[#333333] p-2 rounded-full transition-all duration-300 ease-in-out z-20"
         >
           <ChevronRight className="w-[5rem] h-[5rem] ml-[0.5rem]  transition-transform duration-300 ease-in-out group-hover:scale-110 group-hover:text-white" />
         </button>

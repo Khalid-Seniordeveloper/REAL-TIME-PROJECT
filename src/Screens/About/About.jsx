@@ -23,7 +23,7 @@ const About = () => {
     
 <div className='font-[Poppins] w-[70%]'>
 
-<h1 className='text-red-500 text-center text-[2.5rem]'>(Since-1994)</h1>
+<h1 className='text-[#ffe73a] text-center text-[2.5rem]'>(Since-1994)</h1>
 <h2 className='text-white text-center text-[3.8rem]'>Welcome To Drivco</h2>
 <p className=' text-center text-[1.5rem] text-[#D3D3D3] font-[LightPoppins] tracking-[0.2rem]'>We're passionate car agency
 we're thrilled to have you join our community of automotive enthusiasts and professionals. Whether you're a passionate driver, a car owner, or someone who loves all things automotive, you've come to the right place.At Drivco, we strive to create a space where people can connect, share knowledge, and explore the exciting world of automobiles. From discussing the latest car models and technologies to sharing driving tips and tricks, we're here to fuel your love for everything on wheels.Feel free to ask any questions you have, seek advice, or simply engage in friendly conversations with fellow members. Our community is full of experts and enthusiasts who are eager to share their insights and experiences. Buckle up and enjoy your journey with Drivco!</p>
@@ -37,7 +37,7 @@ we're thrilled to have you join our community of automotive enthusiasts and prof
 
 
 <h1 className=' text-white text-center text-[3.8rem]'>Best Car Agency</h1>
-<h2 className=' text-red-500 text-center text-[3.8rem]'>Why Only Choose Drivco</h2>
+<h2 className=' text-[#ffe73a] text-center text-[3.8rem]'>Why Only Choose Drivco</h2>
 
 </div>
 
@@ -47,7 +47,7 @@ we're thrilled to have you join our community of automotive enthusiasts and prof
 <div className='w-[80%] h-[5rem] gap-[2rem] flex items-center justify-center'>
 
 <CiMoneyCheck1  className='text-[white]  text-[6rem] ml-[-2rem]'/>
-<h1 className='text-white text-[2rem] ml-[-1rem] '><span className='text-red-500'>Affordable</span> Price</h1>
+<h1 className='text-white text-[2rem] ml-[-1rem] '><span className='text-[#ffe73a]'>Affordable</span> Price</h1>
 </div>
 
 <div className='w-[80%] h-[100%] pl-[1rem] mt-[1.5rem]'>
@@ -60,7 +60,7 @@ we're thrilled to have you join our community of automotive enthusiasts and prof
 <div className='w-[100%] h-[5rem] gap-[1rem] flex items-center justify-center'>
 
 <MdOutlineAttachMoney className='text-[white] text-[5rem]  ml-[-5.5rem]'/>
-<h1 className='text-white text-[2rem] ml-[-1.5rem] '><span className='text-red-500'>Money Back </span>Guarantee</h1>
+<h1 className='text-white text-[2rem] ml-[-1.5rem] '><span className='text-[#ffe73a]'>Money Back </span>Guarantee</h1>
 </div>
 
 <div className='w-[80%] h-[100%] pl-[1rem] mt-[1.5rem]'>
@@ -76,7 +76,7 @@ we're thrilled to have you join our community of automotive enthusiasts and prof
 <div className='w-[100%] h-[5rem] gap-[2rem] flex items-center justify-center'>
 
 <VscVerified  className='text-[white] text-[5rem] ml-[-5.2rem]'/>
-<h1 className='text-white text-[2.3rem] ml-[-1.4rem]'><span className='text-red-500'>8 Month</span> Warranty</h1>
+<h1 className='text-white text-[2.3rem] ml-[-1.4rem]'><span className='text-[#ffe73a]'>8 Month</span> Warranty</h1>
 </div>
 
 <div className='w-[80%] h-[100%] pl-[1rem] mt-[1.5rem]'>
@@ -96,23 +96,23 @@ we're thrilled to have you join our community of automotive enthusiasts and prof
 
 <div className='w-[29rem] h-[7rem] gap-[1rem] flex justify-start items-center main-progress-container  pl-[1rem] '>
   
-<CarTaxiFront className='w-[5.5rem] h-[5.5rem]  text-red-500' />
+<CarTaxiFront className='w-[5.5rem] h-[5.5rem]  text-[#ffe73a]' />
 <h1 className='text-[white] text-[1.7rem]'>600K + <br /> <span>Car Available</span></h1>
 </div>
 
 <div className='w-[29rem] h-[7rem] gap-[1rem] flex justify-start items-center main-progress-container  pl-[1.5rem]'>
   
-<FaMoneyBillTrendUp className='w-[4rem] h-[4rem]  text-red-500' />
+<FaMoneyBillTrendUp className='w-[4rem] h-[4rem]  text-[#ffe73a]' />
 <h1 className='text-[white] text-[1.7rem]'>104K+<br /> <span>Car Sold</span></h1>
 </div>
 <div className='w-[29rem] h-[7rem] gap-[1rem] flex justify-start items-center main-progress-container pl-[1rem]'>
   
-<FaCar  className='w-[4rem] h-[4rem]  text-red-500 ' />
+<FaCar  className='w-[4rem] h-[4rem]  text-[#ffe73a] ' />
 <h1 className='text-[white] text-[1.7rem]'>100K+<br /> <span>Used Cars</span></h1>
 </div>
 <div className='w-[31rem] h-[7rem] gap-[1rem] flex justify-start items-center   pl-[1rem]'>
   
-<ThumbsUp  className='w-[4rem] h-[4rem]  text-red-500' />
+<ThumbsUp  className='w-[4rem] h-[4rem]  text-[#ffe73a]' />
 <h1 className='text-[white] text-[1.7rem]'>98.50%<br /> <span>Customer Satisfaction</span></h1>
 </div>
 

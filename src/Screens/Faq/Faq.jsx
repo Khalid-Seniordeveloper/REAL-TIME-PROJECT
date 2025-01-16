@@ -65,7 +65,7 @@ const Faq = () => {
             {faqs.map((faq, index) => (
               <div
                 key={index}
-                className="bg-red-500 text-[1.6rem] border py-[1.5rem] rounded-[0.4rem] mt-[2rem] faq-question-container"
+                className="bg-[#ffe73a] text-[1.6rem] border py-[1.5rem] rounded-[0.4rem] mt-[2rem] faq-question-container"
               >
                 <button
                   className="flex justify-between items-center w-full p-4 text-left text-lg font-medium text-gray-800"
@@ -85,7 +85,7 @@ const Faq = () => {
                     activeIndex === index ? "max-h-[200px]" : "max-h-0"
                   }`}
                 >
-                  <div className="p-4 text-[white] tracking-[0.1rem] font-[LightPoppins]">{faq.answer}</div>
+                  <div className="p-4 text-[black] tracking-[0.1rem] font-[LightPoppins]">{faq.answer}</div>
                 </div>
               </div>
             ))}

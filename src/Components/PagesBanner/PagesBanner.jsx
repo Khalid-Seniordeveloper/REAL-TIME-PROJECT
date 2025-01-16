@@ -30,9 +30,9 @@ const PagesBanner = (props) => {
           <div className="w-[100%] md:w-2/3 text-center space-y-8">
             {/* Heading */}
             <h1 className="text-6xl md:text-8xl font-bold leading-tight">
-              <span className="text-red-500">{props.one}</span>{' '}
+              <span className="text-[#ffe73a]">{props.one}</span>{' '}
               <span className="text-white">{props.two}</span>{' '}
-              <span className="text-red-500">{props.three}</span>{' '}
+              <span className="text-[#ffe73a]">{props.three}</span>{' '}
               <span className="text-white">{props.four}</span>
             </h1>
 
@@ -49,7 +49,7 @@ const PagesBanner = (props) => {
 
             {/* CTA Button */}
             <button className="relative px-16 py-7 bg-[transparent] btn-border text-white rounded-full text-4xl md:text-3xl font-semibold overflow-hidden group shadow-lg hover:shadow-red-500/30 transform hover:scale-105 transition-all">
-  <span className="absolute inset-0 bg-red-500 transform scale-x-0 group-hover:scale-x-100 transition-all duration-500 ease-in-out origin-left h-full"></span>
+  <span className="absolute inset-0 bg-[#ffe73a] transform scale-x-0 group-hover:scale-x-100 transition-all duration-500 ease-in-out origin-left h-full"></span>
   <span className="relative group-hover:text-black transition-colors duration-500 ease-in-out">
     {props.btn}
   </span>

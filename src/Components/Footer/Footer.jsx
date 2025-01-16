@@ -8,7 +8,7 @@ const Footer = () => {
 
 
 <div className='flex justify-center items-center '>
-    <h1 className='text-[1.5rem] designer'>Copyright 2023 <span className='text-red-500'>DRIVCO </span>| Design By <span className='text-red-500'> Egens Lab</span></h1>
+    <h1 className='text-[1.5rem] designer'>Copyright 2023 <span className='text-[#ffe73a]'>DRIVCO </span>| Design By <span className='text-[#ffe73a]'> Egens Lab</span></h1>
 
 </div>
 

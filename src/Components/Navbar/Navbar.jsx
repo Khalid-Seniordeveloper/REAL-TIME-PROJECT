@@ -25,7 +25,7 @@ const Navbar = () => {
 
   return (
     <header>
-      <div className="navbar-container font-[Poppins] w-[100%] h-[10rem] bg-[black] flex items-center justify-center gap-[18.5rem]">
+      <div className="navbar-container font-[Poppins] w-[100%] h-[10rem] bg-[black] flex items-center justify-center gap-[15rem]">
         <div>
           <img src={Logo} alt="Logo" className="w-[20rem] logo" />
         </div>
@@ -36,30 +36,42 @@ const Navbar = () => {
               <li className="relative flex gap-[0rem] group">
                 <span className="relative hover:cursor-pointer">
                   <Link to="/">Home</Link>
-                  <span className="absolute left-1/2 top-[2.2rem] transform -translate-x-1/2 w-0 h-[4px] bg-[#E63946] group-hover:w-full transition-all  duration-300 ease-in-out"></span>
+                  <span className="absolute left-1/2 top-[2.2rem] transform -translate-x-1/2 w-0 h-[4px] bg-[#ffe73a] group-hover:w-full transition-all  duration-300 ease-in-out"></span>
                 </span>
               </li>
               <li className="relative flex gap-[0.2rem] group">
                 <span className="relative hover:cursor-pointer">
                 <Link to="/about">About</Link>
 
-                  <span className="absolute top-[2.2rem] left-1/2 bottom-0 transform -translate-x-1/2 w-0 h-[4px] bg-[#E63946] mb-[3rem] group-hover:w-full transition-all duration-300 ease-in-out"></span>
+                  <span className="absolute top-[2.2rem] left-1/2 bottom-0 transform -translate-x-1/2 w-0 h-[4px] bg-[#ffe73a] mb-[3rem] group-hover:w-full transition-all duration-300 ease-in-out"></span>
                 </span>
               </li>
+
+              <li className="relative flex gap-[0.2rem] group">
+                <span className="relative hover:cursor-pointer">
+                <Link to="/vault">Vault</Link>
+
+                  <span className="absolute top-[2.2rem] left-1/2 bottom-0 transform -translate-x-1/2 w-0 h-[4px] bg-[#ffe73a] group-hover:w-full transition-all duration-300 ease-in-out"></span>
+                </span>
+              </li>
+
+              
               <li className="relative flex gap-[0.2rem] group">
                 <span className="relative hover:cursor-pointer">
                 <Link to="/faq">Faq</Link>
 
-                  <span className="absolute top-[2.2rem] left-1/2 bottom-0 transform -translate-x-1/2 w-0 h-[4px] bg-[#E63946] group-hover:w-full transition-all duration-300 ease-in-out"></span>
+                  <span className="absolute top-[2.2rem] left-1/2 bottom-0 transform -translate-x-1/2 w-0 h-[4px] bg-[#ffe73a] group-hover:w-full transition-all duration-300 ease-in-out"></span>
                 </span>
               </li>
+
               <li className="relative flex gap-[0.2rem] group">
                 <span className="relative hover:cursor-pointer">
                 <Link to="/contact">Contact</Link>
 
-                  <span className="absolute top-[2.2rem] left-1/2 bottom-0 transform -translate-x-1/2 w-0 h-[4px] bg-[#E63946] group-hover:w-full transition-all duration-300 ease-in-out"></span>
+                  <span className="absolute top-[2.2rem] left-1/2 bottom-0 transform -translate-x-1/2 w-0 h-[4px] bg-[#ffe73a] group-hover:w-full transition-all duration-300 ease-in-out"></span>
                 </span>
               </li>
+              
             </ul>
           </div>
    
@@ -70,7 +82,7 @@ const Navbar = () => {
           <div className="flex items-center gap-[0.5rem]">
           <button
             onClick={() => setIsLoginOpen(true)}
-            className="login px-6 py-2 bg-transparent text-white font-medium rounded-lg border-2 border-[#E63946] relative overflow-hidden group transition-all duration-500 text-[1.5rem]"
+            className="login px-6 py-2 bg-transparent text-white font-medium rounded-lg border-2 border-[#ffe73a] relative overflow-hidden group transition-all duration-500 text-[1.5rem]"
           >
             <span className="absolute left-0 top-0 w-full h-full text[1.5rem] bg-gradient-to-r from-red-500 to-white transform scale-x-0 group-hover:scale-x-100 transition-all duration-700 origin-left"></span>
             <span className="relative group-hover:text-white">Login</span>
@@ -128,7 +140,7 @@ const Navbar = () => {
 
   <button
     onClick={() => setIsSignupOpen(true)}
-    className="register px-6 py-2 bg-transparent text-white font-medium rounded-lg border-2 border-[#E63946] relative overflow-hidden group transition-all duration-500 text-[1.5rem] hover:bg-black"
+    className="register px-6 py-2 bg-transparent text-white font-medium rounded-lg border-2 border-[#ffe73a] relative overflow-hidden group transition-all duration-500 text-[1.5rem] hover:bg-black"
   >
     <span className="absolute left-0 top-0 w-full h-full bg-gradient-to-r from-red-500 to-white transform scale-x-0 group-hover:scale-x-100 transition-all duration-700 origin-left"></span>
     <span className="relative group-hover:text-white">Register</span>
@@ -228,8 +240,8 @@ const Navbar = () => {
       </div>
 
 
-            <button className="navbar-btn flex items-center justify-center px-3 py-[0.8rem] bg-transparent text-white font-semibold border-2 border-transparent rounded-lg relative overflow-hidden group transition-all duration-500">
-              <span className="absolute inset-0 bg-gradient-to-r from-red-500 to-yellow-400 group-hover:from-yellow-400 group-hover:to-red-500 transition-all duration-700"></span>
+            <button className="navbar-btn listing-btn flex items-center justify-center px-3 py-[0.8rem] bg-transparent text-white font-semibold border-2 border-transparent rounded-lg relative overflow-hidden group transition-all duration-500">
+              <span className="absolute inset-0 bg-gradient-to-r from-[#ffe73a] to-yellow-400 group-hover:from-yellow-400 group-hover:to-red-500 transition-all duration-700"></span>
               <span className="relative z-10 text-[1.5rem] listing">Add Listing</span>
             </button>
           </div>
@@ -247,12 +259,11 @@ const Navbar = () => {
         </div>
 
         {/* Mobile Menu */}
-        <div className={`md:hidden absolute w-full bg-black transform transition-all duration-300 mt-[45rem] ease-in-out ${isOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-2 pointer-events-none'}`} style={{zIndex: 9999}}>
-          <div className="flex flex-col space-y-4 gap-[2rem] p-4 pl-[2rem]">
+        <div className={`md:hidden absolute w-full bg-black transform transition-all duration-300 mt-[53rem] ease-in-out ${isOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-2 pointer-events-none'}`} style={{zIndex: 9999}}>
+          <div className="flex flex-col space-y-4 gap-[2rem] p-4 pl-[6.7rem]">
         <Link to="/">
         
         <a href="#" className="group flex items-center space-x-2   menu-bottom text-white hover:text-red-500 transition-all duration-300 transform hover:translate-x-2">
-              <Home size={22} />
               <span className='text-[2rem]'>Home</span>
               <ChevronRight size={20} className="ml-auto opacity-0 group-hover:opacity-100" />
             </a>
@@ -260,16 +271,23 @@ const Navbar = () => {
         </Link>
      <Link to="/about">
      
-     <a href="#" className="group flex items-center space-x-2  text-white menu-bottom hover:text-red-500 transition-all duration-300 transform hover:translate-x-2">
-              <User2 size={22} />
+     <a href="#" className="group flex items-center space-x-2 left-0  ml-[-0.3rem] text-white menu-bottom hover:text-[#ffe73a] transition-all duration-300 transform hover:translate-x-2">
               <span className='text-[2rem]'>About</span>
+              <ChevronRight size={20} className="ml-auto opacity-0 group-hover:opacity-100" />
+            </a>
+     </Link>
+
+
+     <Link to="/vault">
+     
+     <a href="#" className="group flex items-center space-x-2 left-0  ml-[-0.3rem] text-white menu-bottom hover:text-[#ffe73a] transition-all duration-300 transform hover:translate-x-2">
+              <span className='text-[2rem]'>Vault</span>
               <ChevronRight size={20} className="ml-auto opacity-0 group-hover:opacity-100" />
             </a>
      </Link>
     <Link to="/faq">
     
-    <a href="#" className="group flex items-center  space-x-2 text-white menu-bottom hover:text-red-500 transition-all duration-300 transform hover:translate-x-2">
-            <TableOfContents  size={22} />
+    <a href="#" className="group flex items-center  space-x-2 text-white menu-bottom ml-[-0.3rem] hover:text-[#ffe73a] transition-all duration-300 transform hover:translate-x-2">
               <span className='text-[2rem]'>Faq</span>
               <ChevronRight size={20} className="ml-auto opacity-0 group-hover:opacity-100" />
             </a>
@@ -277,32 +295,39 @@ const Navbar = () => {
     </Link>
 <Link to="/contact">
 
-<a href="#" className="group flex items-center space-x-2 text-white menu-bottom  hover:text-red-500 transition-all duration-300 transform hover:translate-x-2">
-              <MessageCircle size={22} />
+<a href="#" className="group flex items-center space-x-2 text-white menu-bottom ml-[-0.5rem]  hover:text-[#ffe73a] transition-all duration-300 transform hover:translate-x-2">
               <span className='text-[2rem]'>Contact</span>
               <ChevronRight size={20} className="ml-auto opacity-0 group-hover:opacity-100" />
             </a>
 </Link>
             <a
   href="#"
-  className="group flex items-center space-x-2  text-white menu-bottom hover:text-red-500 transition-all duration-300 transform hover:translate-x-2"
+  className="group flex items-center space-x-2 ml-[-0.5rem]  text-white menu-bottom hover:text-red-500 transition-all duration-300 transform hover:translate-x-2"
   onClick={() => {
     setIsOpen(false); 
     setIsLoginOpen(true); 
   }}
 >
-            <LogIn  size={22} />
               <span className='text-[2rem]'>Login</span>
               <ChevronRight size={20} className="ml-auto opacity-0 group-hover:opacity-100" />
             </a>
-            <a href="#" className="group flex ml-[-0.5rem] items-center menu-bottom space-x-2 text-white hover:text-red-500 transition-all duration-300 transform hover:translate-x-2"   onClick={() => {
+            <a href="#" className="group flex ml-[-0.6rem] items-center menu-bottom space-x-2 text-white hover:text-[#ffe73a] transition-all duration-300 transform hover:translate-x-2"   onClick={() => {
     setIsOpen(false); 
     setIsSignupOpen(true); 
   }}>
-            <CircleUserRound  size={22} />
               <span className='text-[2rem]'>Register</span>
               <ChevronRight size={20} className="ml-auto opacity-0 group-hover:opacity-100" />
             </a>
+
+            <Link to="">
+    
+    <a href="#" className="group flex items-center  ml-[-0.8rem] space-x-2 text-white menu-bottom hover:text-[#ffe73a] transition-all duration-300 transform hover:translate-x-2">
+      
+              <span className='text-[2rem]'>Add Listing</span>
+              <ChevronRight size={20} className="ml-auto opacity-0 group-hover:opacity-100" />
+            </a>
+    
+    </Link>
           </div>
         </div>
 

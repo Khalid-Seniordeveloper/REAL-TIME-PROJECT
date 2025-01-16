@@ -9,6 +9,7 @@ import carfive from '../../assets/car-five.jpg'
 import carsix from '../../assets/car-six.jpg'
 import carseven from '../../assets/car-seven.jpg'
 import Footer from '../Footer/Footer';
+import { Link } from 'react-router-dom';
 
 const Drop = () => {
   const [openDropdown, setOpenDropdown] = useState(null);
@@ -25,7 +26,6 @@ const Drop = () => {
     color: '',
   });
 
-  const [yearRange, setYearRange] = useState(2025);
   const [kmRange, setKmRange] = useState(1000000);
 
   const dropdowns = {
@@ -55,10 +55,16 @@ const Drop = () => {
     setOpenDropdown(null);
   };
 
-  const handlePriceChange = (e) => {
-    setPriceRange([0, parseInt(e.target.value)]);
+  const handlePriceChange = (e, type) => {
+    const value = parseInt(e.target.value);
+    if (type === 'min') {
+      setPriceRange([value, priceRange[1]]);
+    } else {
+      setPriceRange([priceRange[0], value]);
+    }
   };
-
+  
+  
 
 
   const [selectedFeatures, setSelectedFeatures] = useState(new Set());
@@ -93,11 +99,13 @@ const Drop = () => {
     'Smart headlight cluster',
     'Premium wheels',
     'Body character lines',
-    'High-quality paint'
 
   ];
 
+  const [yearRange, setYearRange] = useState([2011, 2025]); // Initialize as an array with start and end year
 
+
+  
   const handleCheckboxChange = (feature) => {
     const newSelected = new Set(selectedFeatures);
     if (newSelected.has(feature)) {
@@ -107,7 +115,16 @@ const Drop = () => {
     }
     setSelectedFeatures(newSelected);
   };
-
+  const handleYearChange = (e, type) => {
+    const value = parseInt(e.target.value);
+    if (type === 'start') {
+      // Ensure that start year does not exceed the end year
+      setYearRange([value, yearRange[1]]);
+    } else {
+      // Ensure that end year does not go below the start year
+      setYearRange([yearRange[0], value]);
+    }
+  };
   const cars = [
     {
       name: "2017 BMW X1 xDrive 20d xline",
@@ -239,7 +256,7 @@ const Drop = () => {
       <div className='mb-[6rem] w-[100%] h-full flex justify-center gap-[2rem]   drop-main-container mt-[3rem] font-[Poppins]'>
         {/* First Column */}
         <div className="w-[25%] h-full bg-[black] fields-container text-[1.4rem]">
-  <div className="w-[100%] p-6 bg-black rounded-md shadow-lg border border-orange-500 shadow-white">
+  <div className="w-[100%] p-6 bg-black rounded-md shadow-lg border border-[#ffe73a] shadow-white">
     <div className="flex justify-between items-center mb-6">
       <h2 className="text-3xl font-semibold text-gray-200">Filters and Sort</h2>
       <button className="text-slate-400 text-2xl hover:text-gray-700 flex items-center">
@@ -253,7 +270,7 @@ const Drop = () => {
         {/* Dropdown Button */}
         <button
           onClick={() => handleDropdownClick(name)}
-          className="w-full px-4 py-3 bg-transparent border border-orange-500 shadow-sm shadow-white rounded-lg flex justify-between items-center hover:border-orange-500"
+          className="w-full px-4 py-3 bg-transparent border border-[#ffe73a] shadow-sm shadow-white rounded-lg flex justify-between items-center hover:border-orange-500"
         >
           <span className="text-white capitalize">
             {selectedOptions[name] || name}
@@ -268,11 +285,11 @@ const Drop = () => {
 
         {/* Dropdown Options */}
         {openDropdown === name && (
-          <div className="mt-2 p-2 bg-black border border-orange-500 rounded-lg">
+          <div className="mt-2 p-2 bg-black border border-[#ffe73a] rounded-lg">
             <select
               value={selectedOptions[name]}
               onChange={(e) => handleOptionChange(name, e.target.value)}
-              className="w-full px-2 py-1.5 text-white bg-black border border-orange-500 rounded-lg focus:outline-none focus:ring-0 focus:ring-orange-500"
+              className="w-full px-2 py-1.5 text-white bg-black border-[#ffe73a] rounded-lg focus:outline-none focus:ring-0 focus:ring-[#ffe73a]"
             >
               <option value="" disabled>
                 Select {name}
@@ -290,29 +307,46 @@ const Drop = () => {
 
     {/* Price Range Filter */}
     <div className="mt-6 mb-6">
-      <div className="flex justify-between mb-2">
-        <span className="text-orange-600 font-semibold text-3xl">Price:</span>
-        <span className="text-gray-200">
-          ${priceRange[0]} — ${priceRange[1]}
-        </span>
-      </div>
-      <input
-        type="range"
-        min="0"
-        max="50000"
-        value={priceRange[1]}
-        onChange={handlePriceChange}
-        className="w-full h-2 bg-orange-500 rounded-lg appearance-none cursor-pointer 
-        [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-6 [&::-webkit-slider-thumb]:h-6 [&::-webkit-slider-thumb]:bg-orange-500 [&::-webkit-slider-thumb]:rounded-full"
-      />
-    </div>
+  <div className="flex justify-between mb-2">
+    <span className="text-[#ffe73a] font-semibold text-3xl">Price:</span>
+    <span className="text-gray-200">
+      ${priceRange[0]} — ${priceRange[1]}
+    </span>
+  </div>
+
+  {/* Min Price Slider */}
+  <div className="mb-4">
+    <label className="block text-[#ffe73a] text-xl mb-2">Min Price</label>
+    <input
+      type="range"
+      min="0"
+      max={priceRange[1]} // Lock min slider to max value
+      value={priceRange[0]}
+      onChange={(e) => handlePriceChange(e, 'min')}
+      className="w-full h-2 bg-[#ffe73a] rounded-lg appearance-none cursor-pointer"
+    />
+  </div>
+
+  {/* Max Price Slider */}
+  <div>
+    <label className="block text-[#ffe73a] text-xl mb-2">Max Price</label>
+    <input
+      type="range"
+      min={priceRange[0]} // Lock max slider to min value
+      max="50000" // Set a max value for the price range
+      value={priceRange[1]}
+      onChange={(e) => handlePriceChange(e, 'max')}
+      className="w-full h-2 bg-[#ffe73a] rounded-lg appearance-none cursor-pointer"
+    />
+  </div>
+</div>
 
     {/* Render remaining dropdowns from dropdownstwo */}
     {Object.keys(dropdownstwo).map((name) => (
       <div key={name} className="mb-4">
         <button
           onClick={() => handleDropdownClick(name)}
-          className="w-full px-4 py-3 bg-black border border-orange-500 rounded-lg flex justify-between items-center hover:border-orange-500 shadow-sm shadow-white"
+          className="w-full px-4 py-3 bg-black border border-[#ffe73a] rounded-lg flex justify-between items-center hover:border-[#ffe73a] shadow-sm shadow-white"
         >
           <span className="text-gray-200 capitalize">
             {selectedOptions[name] || name}
@@ -326,11 +360,11 @@ const Drop = () => {
         </button>
 
         {openDropdown === name && (
-          <div className="mt-2 p-2 bg-transparent border border-orange-500 rounded-lg">
+          <div className="mt-2 p-2 bg-transparent border border-[#ffe73a] rounded-lg">
             <select
               value={selectedOptions[name]}
               onChange={(e) => handleOptionChange(name, e.target.value)}
-              className="w-full px-2 py-1.5 text-gray-200 bg-transparent border border-orange-500 rounded-lg"
+              className="w-full px-2 py-1.5 text-gray-200 bg-black border border-[#ffe73a] rounded-lg"
             >
               <option value="" disabled>
                 Select {name}
@@ -346,34 +380,40 @@ const Drop = () => {
       </div>
     ))}
 
-    <div className="w-[100%] p-4 bg-transparent rounded-lg">
-      {/* Year Range Slider */}
-      <div className="mt-[0.6rem] mb-6">
-        <div className="mb-2 text-orange-500 font-semibold text-2xl">
-          Year: 2011 — {yearRange.toLocaleString()}
-        </div>
-        <div className="relative">
-          <div className="absolute h-2 bg-orange-500 left-0 right-0 top-1/2 -translate-y-1/2 rounded-full">
-            <div
-              className="absolute h-full bg-orange-500 left-0"
-              style={{
-                width: `${((yearRange - 2011) / (2025 - 2011)) * 100}%`,
-              }}
-            ></div>
-          </div>
-          <input
-            type="range"
-            min="2011"
-            max="2025"
-            value={yearRange}
-            onChange={(e) => setYearRange(parseInt(e.target.value))}
-            className="w-full h-2 appearance-none bg-transparent cursor-pointer relative z-10 [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-6 [&::-webkit-slider-thumb]:h-6 [&::-webkit-slider-thumb]:bg-orange-500 [&::-webkit-slider-thumb]:rounded-full [&::-moz-range-thumb]:w-6 [&::-moz-range-thumb]:h-6 [&::-moz-range-thumb]:bg-orange-500 [&::-moz-range-thumb]:border-0 [&::-moz-range-thumb]:rounded-full"
-          />
-        </div>
-      </div>
-    </div>
+{/* Year Range Filter */}
+<div className="w-full p-4 bg-transparent rounded-lg">
+  <div className="mb-2 text-[#ffe73a] font-semibold text-2xl">
+    Year: {yearRange[0]} — {yearRange[1]}  {/* Display the range */}
+  </div>
 
-    <div className="W-[100%] p-6  bg-transparent border border-orange-500 rounded-lg shadow-sm shadow-white">
+  {/* Start Year Slider */}
+  <div className="mb-4">
+    <label className="block text-[#ffe73a] text-xl mb-2">Start Year</label>
+    <input
+      type="range"
+      min="2011" 
+      max={yearRange[1]} // Lock the max value to the end year
+      value={yearRange[0]}
+      onChange={(e) => handleYearChange(e, 'start')}  // Handle start year change
+      className="w-full h-2 bg-[#ffe73a] rounded-lg appearance-none cursor-pointer"
+    />
+  </div>
+
+  {/* End Year Slider */}
+  <div>
+    <label className="block text-[#ffe73a] text-xl mb-2">End Year</label>
+    <input
+      type="range"
+      min={yearRange[0]} // Lock the min value to the start year
+      max="2025" // Max value is fixed to 2025
+      value={yearRange[1]}
+      onChange={(e) => handleYearChange(e, 'end')}  // Handle end year change
+      className="w-full h-2 bg-[#ffe73a] rounded-lg appearance-none cursor-pointer"
+    />
+  </div>
+</div>
+
+    <div className="W-[100%] p-6  bg-transparent border border-[#ffe73a] rounded-lg shadow-sm shadow-white">
       <h2 className="text-4xl  font-semibold mb-4 text-gray-200">Featured</h2>
       <div className="space-y-3">
         {features.map((feature) => (
@@ -385,9 +425,9 @@ const Drop = () => {
               type="checkbox"
               checked={selectedFeatures.has(feature)}
               onChange={() => handleCheckboxChange(feature)}
-              className="w-6 h-6 text-gray-200  border-gray-300 rounded focus:ring-orange-500 cursor-pointer checkbox"
+              className="w-6 h-6 text-gray-200  border-gray-300 rounded focus:ring-[#ffe73a] cursor-pointer checkbox"
             />
-            <span className="featured-container text-[1.7rem] text-gray-200 group-hover:text-orange-500">
+            <span className="featured-container text-[1.5rem] text-gray-200 group-hover:text-[#ffe73a]">
               {feature}
             </span>
           </label>
@@ -396,7 +436,7 @@ const Drop = () => {
     </div>
 
 
-    <div className="w-[100%] p-6 bg-transparent border border-orange-500 rounded-lg shadow-sm shadow-white">
+    <div className="w-[100%] p-6 bg-transparent border border-[#ffe73a] rounded-lg shadow-sm shadow-white">
       <h2 className="text-4xl font-semibold mb-4 text-gray-200">Single Select</h2>
       <div className="space-y-3">
         {singleSelect.map((singleOption) => (
@@ -410,9 +450,9 @@ const Drop = () => {
               value={singleOption}
               checked={selectedOption === singleOption} // Compare with selectedOption
               onChange={() => handleRadioChange(singleOption)} // Handle radio change
-              className="w-6 h-6 text-gray-200 border-gray-300 rounded focus:ring-orange-500 cursor-pointer"
+              className="w-6 h-6 text-gray-200 border-gray-300 rounded focus:ring-[#ffe73a] cursor-pointer"
             />
-            <span className="featured-container text-[1.7rem] text-gray-200 group-hover:text-orange-500">
+            <span className="featured-container text-[1.5rem] text-gray-200 group-hover:text-[#ffe73a]">
               {singleOption}
             </span>
           </label>
@@ -436,7 +476,10 @@ const Drop = () => {
 
 {/* CARDS CONTAINER  */}
 
-<div className='w-[75%] h-full cards-parent-container'>
+<div className='w-[75%]  h-full cards-parent-container'>
+
+
+
 
 
 {cars.map((car, index) => (
@@ -452,6 +495,7 @@ const Drop = () => {
           src={car.image}
         />
       ))}
+
 
 </div>
 

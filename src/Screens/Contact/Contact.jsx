@@ -39,21 +39,21 @@ const Contact = () => {
     <h1 className="text-[2.3rem] text-white">Contact Us With Support Line</h1>
 
     <fieldset className="border p-[3rem] rounded-[1rem] mt-[2rem]">
-      <legend className="ml-[0rem] text-red-500 text-[2.1rem]">To know more</legend>
+      <legend className="ml-[0rem] text-[#ffe73a] text-[2.1rem]">To know more</legend>
       <h1 className="text-white text-[2.3rem]">Email Now : <br />
         <span>info@example.com</span>
       </h1>
     </fieldset>
 
     <fieldset className="border p-[3rem] rounded-[1rem] mt-[4rem]">
-      <legend className="ml-[0rem] text-red-500 text-[2.1rem]">Shop Address</legend>
+      <legend className="ml-[0rem] text-[#3ffe73a] text-[2.1rem]">Shop Address</legend>
       <h1 className="text-white text-[2.3rem]">Location <br />
         <span>Road-03, House-123/124, New York.</span>
       </h1>
     </fieldset>
 
     <h2 className="text-[1.5rem] mt-[2rem] text-white timing">
-      <span className="text-red-500">N:B:</span> Customer support always open at 9 am to 6 pm.
+      <span className="text-[#ffe73a]">N:B:</span> Customer support always open at 9 am to 6 pm.
     </h2>
   </div>
 
@@ -68,7 +68,7 @@ const Contact = () => {
       <input 
         type="text" 
         placeholder="Your name" 
-        className="contact-field placeholder-white  focus:outline-none focus:border-2 focus:border-red-500 py-[1.5rem] text-[1.8rem]" 
+        className="contact-field placeholder-white  focus:outline-none focus:border-2 focus:border-[#ffe73a] py-[1.5rem] text-[1.8rem]" 
       />
     </div>
 
@@ -80,7 +80,7 @@ const Contact = () => {
       <input 
         type="text" 
         placeholder="Your contact" 
-        className="contact-field placeholder-white focus:outline-none focus:border-2 focus:border-red-500 py-[1.5rem] text-[1.8rem]" 
+        className="contact-field placeholder-white focus:outline-none focus:border-2 focus:border-[#ffe73a] py-[1.5rem] text-[1.8rem]" 
       />
     </div>
 
@@ -92,7 +92,7 @@ const Contact = () => {
       <input 
         type="text" 
         placeholder="Your Email Address" 
-        className="contact-field placeholder-white focus:outline-none focus:border-2 focus:border-red-500 py-[1.5rem] text-[1.8rem]" 
+        className="contact-field placeholder-white focus:outline-none focus:border-2 focus:border-[#ffe73a] py-[1.5rem] text-[1.8rem]" 
       />
     </div>
 
@@ -104,7 +104,7 @@ const Contact = () => {
       <input 
         type="text" 
         placeholder="Subject" 
-        className="contact-field placeholder-white focus:outline-none focus:border-2 focus:border-red-500 py-[1.5rem] text-[1.8rem]" 
+        className="contact-field placeholder-white focus:outline-none focus:border-2 focus:border-[#ffe73a] py-[1.5rem] text-[1.8rem]" 
       />
     </div>
 
@@ -115,13 +115,13 @@ const Contact = () => {
       </div> <br />
       <textarea 
         placeholder="Short Note" 
-        className="contact-field h-[18rem] placeholder-white focus:outline-none focus:border-2 focus:border-red-500 py-[1.5rem] text-[1.8rem]"
+        className="contact-field h-[18rem] placeholder-white focus:outline-none focus:border-2 focus:border-[#ffe73a] py-[1.5rem] text-[1.8rem]"
       ></textarea>
     </div>
 
     {/* Submit Button */}
-    <button className="relative text-[1.8rem] text-white p-[1.5rem] rounded-[0.7rem] border-2 border-solid border-red-500 overflow-hidden group">
-  <span className="absolute inset-0 bg-red-500 transform scale-x-0 group-hover:scale-x-100 transition-all duration-500 ease-in-out origin-left h-full"></span>
+    <button className="relative text-[1.8rem] text-white p-[1.5rem] rounded-[0.7rem] border-2 border-solid border-[#ffe73a] overflow-hidden group">
+  <span className="absolute inset-0 bg-[#ffe73a] transform scale-x-0 group-hover:scale-x-100 transition-all duration-500 ease-in-out origin-left h-full"></span>
   <span className="relative group-hover:text-black transition-colors duration-500 ease-in-out">
     Submit
   </span>
