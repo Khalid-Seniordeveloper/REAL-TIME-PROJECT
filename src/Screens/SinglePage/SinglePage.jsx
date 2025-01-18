@@ -92,7 +92,16 @@ const SinglePage = () => {
   };
 
     const carsCard = [
-  
+      {
+        name: "2017 BMW X1 xDrive 20",
+        model: "Sedan",
+        kms: "72,491 kms",
+        fuel: "Diesel",
+        transmission: "Automatic",
+        price: "$73,000",
+        owner: "Kathryn Murphy",
+        image: carone
+      },
       {
         name: "2018 Audi A4 Premium",
         model: "Sedan",
@@ -140,11 +149,11 @@ const SinglePage = () => {
       <div className="flex w-[65%] for-car-width flex-col   ml-[4.6rem] space-y-8 first-container">
         {/* Carousel Section */}
         <div className="relative w-full single-page-car-container">
-  <div className="relative h-[38rem] car-for-height overflow-hidden rounded-lg">
+  <div className="relative h-[38rem] md:h-[38rem] sm:h-[28rem] car-for-height overflow-hidden rounded-lg">
     {cars.map((car, index) => (
       <div
         key={index}
-        className={`absolute w-full h-full transition-transform duration-500 ease-in-out ${
+        className={`absolute inset-0 w-full h-full transition-transform duration-500 ease-in-out ${
           index === currentIndex
             ? 'translate-x-0'
             : index < currentIndex
@@ -155,7 +164,7 @@ const SinglePage = () => {
         <img
           src={car.image}
           alt={car.name}
-          className="w-full single-page-car h-full object-cover"
+          className="w-full h-full object-cover"
         />
       </div>
     ))}
@@ -177,6 +186,7 @@ const SinglePage = () => {
     <ChevronRight size={44} className="pre" />
   </button>
 </div>
+
 
         {/* Info Section */}
        
@@ -328,7 +338,7 @@ const SinglePage = () => {
 
   </div>
 
-  <p className=' text-[1.5rem] text-[#D3D3D3] font-[LightPoppins] tracking-[0.2rem]'> eius assumenda, accusamus corrupti eius assumend pariatur nihil deserunt repellat tenetur. Atque corporis doloribus aperiam, est asperiores id. Quos voluptates a accusantium distinctio, et cum explicabo quam asperiores nostrum. At distinctio dolor earum veritatis voluptas.</p>
+  <p className=' text-[1.5rem] text-[#D3D3D3] font-[LightPoppins] tracking-[0.2rem]'> accusamus corrupti eius assumenda, pariatur nihil deserunt repellat tenetur. Atque corporis doloribus aperiam, est asperiores id. Quos voluptates a accusantium distinctio, et cum explicabo quam asperiores nostrum. At distinctio dolor earum veritatis voluptas.</p>
 
       </div>
 
@@ -446,7 +456,7 @@ const SinglePage = () => {
     <div className="flex-grow h-[2px] bg-white/90 ml-4"></div>
   </div>
 
-<div className='w-[100%] h-full flex gap-[4.5rem]  ml-[]  px-[2rem] flex-wrap justify-center'>
+<div className='w-[100%] h-full flex flex-wrap gap-[4rem]   px-[2rem] justify-center'>
 
 
 {carsCard.map((car, index) => (
