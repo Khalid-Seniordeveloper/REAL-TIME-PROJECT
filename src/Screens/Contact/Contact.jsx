@@ -46,7 +46,7 @@ const Contact = () => {
     </fieldset>
 
     <fieldset className="border p-[3rem] rounded-[1rem] mt-[4rem]">
-      <legend className="ml-[0rem] text-[#3ffe73a] text-[2.1rem]">Shop Address</legend>
+      <legend className="ml-[0rem] text-[#ffe73a] text-[2.1rem]">Shop Address</legend>
       <h1 className="text-white text-[2.3rem]">Location <br />
         <span>Road-03, House-123/124, New York.</span>
       </h1>

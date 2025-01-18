@@ -75,16 +75,11 @@ const Drop = () => {
     'Cruise Control',
     'Navigation',
     'Power Locks',
-    'Audio system',
-    'Touchscreen display',
-    'GPS navigation',
-    'Phone connectivity',
-    'In-car Wi-Fi',
-    'Chrome-plated grill',
-    'Smart headlight cluster',
-    'Premium wheels',
-    'Body character lines',
-    'High-quality paint'
+    'Navigation',
+    'Navigation',
+
+    'Power Locks',
+
   ];
 
 
@@ -95,10 +90,8 @@ const Drop = () => {
 
     'Navigation',
     'Power Locks',
-        'Chrome-plated grill',
-    'Smart headlight cluster',
-    'Premium wheels',
-    'Body character lines',
+    'Backup Camera',
+    'Cruise Control',
 
   ];
 
@@ -126,36 +119,7 @@ const Drop = () => {
     }
   };
   const cars = [
-    {
-      name: "2017 BMW X1 xDrive 20d xline",
-      model: "Sedan",
-      kms: "72,491 kms",
-      fuel: "Diesel",
-      transmission: "Automatic",
-      price: "$73,000",
-      owner: "Kathryn Murphy",
-      image: carone
-    },
-    {
-      name: "2018 Audi A4 Premium",
-      model: "Sedan",
-      kms: "45,000 kms",
-      fuel: "Petrol",
-      transmission: "Automatic",
-      price: "$32,000",
-      owner: "John Doe",
-      image: cartwo
-    },
-    {
-      name: "2020 Mercedes-Benz",
-      model: "Coupe",
-      kms: "30,000 kms",
-      fuel: "Electric",
-      transmission: "Automatic",
-      price: "$55,000",
-      owner: "Alice Smith",
-      image: carthree
-    },
+  
     {
       name: "2019 Toyota Camry Hybrid",
       model: "Sedan",
@@ -380,38 +344,7 @@ const Drop = () => {
       </div>
     ))}
 
-{/* Year Range Filter */}
-<div className="w-full p-4 bg-transparent rounded-lg">
-  <div className="mb-2 text-[#ffe73a] font-semibold text-2xl">
-    Year: {yearRange[0]} — {yearRange[1]}  {/* Display the range */}
-  </div>
 
-  {/* Start Year Slider */}
-  <div className="mb-4">
-    <label className="block text-[#ffe73a] text-xl mb-2">Start Year</label>
-    <input
-      type="range"
-      min="2011" 
-      max={yearRange[1]} // Lock the max value to the end year
-      value={yearRange[0]}
-      onChange={(e) => handleYearChange(e, 'start')}  // Handle start year change
-      className="w-full h-2 bg-[#ffe73a] rounded-lg appearance-none cursor-pointer"
-    />
-  </div>
-
-  {/* End Year Slider */}
-  <div>
-    <label className="block text-[#ffe73a] text-xl mb-2">End Year</label>
-    <input
-      type="range"
-      min={yearRange[0]} // Lock the min value to the start year
-      max="2025" // Max value is fixed to 2025
-      value={yearRange[1]}
-      onChange={(e) => handleYearChange(e, 'end')}  // Handle end year change
-      className="w-full h-2 bg-[#ffe73a] rounded-lg appearance-none cursor-pointer"
-    />
-  </div>
-</div>
 
     <div className="W-[100%] p-6  bg-transparent border border-[#ffe73a] rounded-lg shadow-sm shadow-white">
       <h2 className="text-4xl  font-semibold mb-4 text-gray-200">Featured</h2>
@@ -476,7 +409,7 @@ const Drop = () => {
 
 {/* CARDS CONTAINER  */}
 
-<div className='w-[75%]  h-full cards-parent-container'>
+<div className='w-[75%]  h-full cards-parent-container cards-parent-container-two'>
 
 
 

@@ -3,14 +3,16 @@ import banner from '../../assets/banner.jpg';
 
 const PagesBanner = (props) => {
   return (
-    <div className="relative h-[46rem] overflow-hidden w-[100%] font-[Poppins]">
+    <div className="relative h-[46rem] overflow-hidden pages-banner-main-container w-[91%] ml-[6rem] font-[Poppins]">
       {/* Background Image with Overlay */}
       <div
         style={{
           backgroundImage: `url(${banner})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
-          height : '100%'
+          height : '100%',
+   
+          display : 'flex'
         }}
         className="absolute inset-0"
       >

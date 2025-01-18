@@ -34,24 +34,8 @@ const Selector = () => {
       options: ['Sedan', 'Hatchback', 'SUV', 'Coupe'],
       selectedOption: '',
     },
-    {
-      id: 'engine',
-      placeholder: 'V6',
-      options: ['V4', 'V6', 'V8', 'Electric'],
-      selectedOption: '',
-    },
-    {
-      id: 'transmission',
-      placeholder: 'Automatic',
-      options: ['Automatic', 'Manual', 'CVT'],
-      selectedOption: '',
-    },
-    {
-      id: 'fuelType',
-      placeholder: 'Petrol',
-      options: ['Petrol', 'Diesel', 'Electric', 'Hybrid'],
-      selectedOption: '',
-    },
+ 
+    
   ];
 
   const [selectors, setSelectors] = useState(initialSelectors);
@@ -116,15 +100,15 @@ const Selector = () => {
     <>
       <div>
         <section>
-          <div className="selector-div-container relative w-full h-[15rem] bg-gray-800 bg-gradient-to-br from-gray-900 to-gray-800 p-4 rounded-lg flex justify-center items-center font-[Poppins]">
-            <div className="selector-container mt-[1rem]  ml-[6rem] grid grid-cols-4 gap-4 w-full">
+          <div className="selector-div-container relative w-full h-[17rem] bg-gray-800 bg-gradient-to-br from-gray-900 to-gray-800 p-4 rounded-lg flex justify-center items-center font-[Poppins]">
+            <div className="selector-container mt-[1rem]  ml-[2rem] grid grid-cols-3 gap-4 w-full">
               {selectors.map((selector) => (
                 <div key={selector.id} className="w-full relative">
                   <button
                     onClick={() => toggleSelector(selector.id)}
-                    className="Selectors w-full h-16 bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-left flex items-center justify-between hover:border-orange-500/50 focus:outline-none focus:border-[#ffe73a] transition-all duration-300"
+                    className="Selectors w-full h-[5rem] bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-left flex items-center justify-between hover:border-orange-500/50 focus:outline-none focus:border-[#ffe73a] transition-all duration-300"
                   >
-                    <span className="text-gray-400 text-xl options-title">
+                    <span className="text-gray-400 text-[1.5rem] options-title">
                       {selector.selectedOption || selector.placeholder}
                     </span>
                     <ChevronDown
@@ -133,14 +117,14 @@ const Selector = () => {
                   </button>
                   {/* Dropdown (opened on click) */}
                   {openSelector === selector.id && (
-                    <div className="absolute w-full top-full mt-2 bg-gray-800 border border-gray-700 backdrop-blur-sm rounded-lg shadow-lg z-10">
+                    <div className="absolute w-[93%] option-container top-full mt-2 bg-gray-800 border border-gray-700 backdrop-blur-sm rounded-lg shadow-lg z-10">
                       <select
-                        className="w-full px-4 py-2 bg-gray-800 text-lg text-gray-300 border-none rounded-lg focus:ring-2 focus:ring-gray-500"
+                        className="w-[95%] px-4 py-2 bg-gray-800 text-[1.5em] text-gray-300 border-none rounded-lg focus:ring-2 focus:ring-gray-500"
                         value={selector.selectedOption}
                         onChange={(e) => handleOptionSelect(selector.id, e.target.value)}
                       >
                         <option value="" disabled>
-                          Select an option
+                      <span>Select an option</span>
                         </option>
                         {selector.options.map((option) => (
                           <option key={option} value={option} className="text-gray-300 bg-gray-800 hover:bg-gray-700/50">
@@ -155,7 +139,7 @@ const Selector = () => {
 
               {/* Buttons */}
               <div className="flex items-center gap-4">
-                <RefreshCcw onClick={backToNormal} className="cursor-pointer" />
+                <RefreshCcw onClick={backToNormal} size={26} className="cursor-pointer" />
               </div>
             </div>
           </div>

@@ -3,10 +3,10 @@ import React, { useState } from 'react';
 import { ChevronLeft, ChevronRight, CircleCheck } from 'lucide-react';
 import { Send, Phone, Mail, MessageSquareWarning } from 'lucide-react';
 import { Gauge,  Fuel, Car } from 'lucide-react';
-import audi from '../../assets/audi.png'
-import bmw from '../../assets/bmw.png'
-import porsche from '../../assets/porsche.png'
-import yaudi from '../../assets/yAudi.png'
+import audi from '../../assets/audi.jpg'
+import bmw from '../../assets/bmw.jpg'
+import porsche from '../../assets/porsche.jpg'
+import yaudi from '../../assets/yAudi.jpeg'
 import PagesBanner from '../../Components/PagesBanner/PagesBanner';
 import Navbar from '../../Components/Navbar/Navbar';
 import carone from '../../assets/car-one.jpg'
@@ -53,31 +53,27 @@ const SinglePage = () => {
       col2: { icon: <CircleCheck size={30} />, text: "Bluetooth" },
       col3: { icon: <CircleCheck size={30} />, text: "Blind Spot System" }
     },
-    {
-      col1: { icon: <CircleCheck size={30} />, text: "Navigation" },
-      col2: { icon: <CircleCheck size={30} />, text: "Premium Seat Material" },
-      col3: { icon: <CircleCheck size={30} />, text: "Multi-Zone Climate" }
-    }
+
   ];
 
   const infoItems = [
     {
-      icon: <Gauge size={40} />,
+      icon: <Gauge size={32} />,
       value: "25,100 miles",
       label: "Mileage"
     },
     {
-      icon: <Fuel size={40}  />,
+      icon: <Fuel size={32}  />,
       value: "22,231 cc",
       label: "Engine"
     },
     {
-      icon: <Fuel size={40}  />,
+      icon: <Fuel size={32}  />,
       value: "Petrol + Gas",
       label: "Fuel Type"
     },
     {
-      icon: <Car  size={40}  />,
+      icon: <Car  size={32}  />,
       value: "Used Car",
       label: "Condition"
     }
@@ -96,16 +92,7 @@ const SinglePage = () => {
   };
 
     const carsCard = [
-      {
-        name: "2017 BMW X1 xDrive 20d xline",
-        model: "Sedan",
-        kms: "72,491 kms",
-        fuel: "Diesel",
-        transmission: "Automatic",
-        price: "$73,000",
-        owner: "Kathryn Murphy",
-        image: carone
-      },
+  
       {
         name: "2018 Audi A4 Premium",
         model: "Sedan",
@@ -149,57 +136,56 @@ const SinglePage = () => {
   para="Discover the performance, features, and luxury of your dream car." 
   btn="Explore More Cars" 
 />
-<div className='w-[100%] flex gap-[4rem] font-[Poppins] mt-[5rem] main-single-page-container'>
-      <div className="flex w-[65%] flex-col   ml-20 space-y-8 first-container">
+<div className='w-[100%] flex gap-[4rem] px-[1.3rem] font-[Poppins] mt-[5rem] main-single-page-container'>
+      <div className="flex w-[65%] for-car-width flex-col   ml-[4.6rem] space-y-8 first-container">
         {/* Carousel Section */}
-        <div className="relative w-full pl-[30rem]  single-page-car-container">
-          <div className="relative h-64 car-for-height  overflow-hidden rounded-lg">
-            {cars.map((car, index) => (
-              <div
-                key={index}
-                className={`absolute w-full h-full transition-transform duration-500 ease-in-out ${
-                  index === currentIndex
-                    ? 'translate-x-0'
-                    : index < currentIndex
-                    ? '-translate-x-full'
-                    : 'translate-x-full'
-                }`}
-              >
-                <img
-                  src={car.image}
-                  alt={car.name}
-                  className="w-[60%] single-page-car  h-[100%] object-cover"
-                />
-             
-              </div>
-            ))}
-          </div>
+        <div className="relative w-full single-page-car-container">
+  <div className="relative h-[38rem] car-for-height overflow-hidden rounded-lg">
+    {cars.map((car, index) => (
+      <div
+        key={index}
+        className={`absolute w-full h-full transition-transform duration-500 ease-in-out ${
+          index === currentIndex
+            ? 'translate-x-0'
+            : index < currentIndex
+            ? '-translate-x-full'
+            : 'translate-x-full'
+        }`}
+      >
+        <img
+          src={car.image}
+          alt={car.name}
+          className="w-full single-page-car h-full object-cover"
+        />
+      </div>
+    ))}
+  </div>
 
-          <button
-            onClick={prevSlide}
-            className="absolute left-2 top-1/2 -translate-y-1/2 bg-[#1f1f1f]  hover:bg-[#333333] text-[#ffe73a] p-2 rounded-full shadow-lg transition-all"
-            aria-label="Previous slide"
-          >
-            <ChevronLeft size={44} className='pre' />
-          </button>
+  <button
+    onClick={prevSlide}
+    className="absolute left-2 top-1/2 -translate-y-1/2 bg-[#1f1f1f] hover:bg-[#333333] text-[#ffe73a] p-2 rounded-full shadow-lg transition-all"
+    aria-label="Previous slide"
+  >
+    <ChevronLeft size={44} className="pre" />
+  </button>
 
-          <button
-            onClick={nextSlide}
-            className="absolute right-2 top-1/2 -translate-y-1/2  bg-[#1f1f1f] hover:bg-[#333333] text-[#ffe73a] p-2 rounded-full shadow-lg transition-all"
-            aria-label="Next slide"
-          >
-            <ChevronRight size={44} className='pre'/>
-          </button>
-        </div>
+  <button
+    onClick={nextSlide}
+    className="absolute right-2 top-1/2 -translate-y-1/2 bg-[#1f1f1f] hover:bg-[#333333] text-[#ffe73a] p-2 rounded-full shadow-lg transition-all"
+    aria-label="Next slide"
+  >
+    <ChevronRight size={44} className="pre" />
+  </button>
+</div>
 
         {/* Info Section */}
        
 
 
         <div>
-        <div className="bg-transparent rounded-lg shadow-md w-[100%] mb-12">
+        <div className="bg-transparent rounded-lg shadow-md w-[100%] ">
         <div className="mb-6 flex items-center gap-2">
-          <h2 className="text-5xl font-semibold text-[#ffe73a]">Car Info</h2>
+          <h2 className="text-[2rem]  font-semibold text-[#ffe73a]">Car Info</h2>
           <div className="h-px bg-white/90 flex-grow ml-2 w-6"></div>
         </div>
 
@@ -213,8 +199,8 @@ const SinglePage = () => {
                     {item.icon}
                   </div>
                   <div>
-                    <div className="text-[2.1rem] text-[#ffe37a] ">{item.value}</div>
-                    <div className="text-[2.1rem] text-gray-400 ">{item.label}</div>
+                    <div className="text-[1.5rem] text-[#ffe37a] ">{item.value}</div>
+                    <div className="text-[1.4rem] text-gray-400 ">{item.label}</div>
                   </div>
                 </div>
               ))}
@@ -225,7 +211,7 @@ const SinglePage = () => {
         {/* Features Section */}
         <div className="w-full">
           <div className="mb-6 flex items-center gap-2">
-            <h2 className="text-5xl font-semibold text-[#ffe73a]">Key Features</h2>
+            <h2 className="text-[2rem] font-semibold text-[#ffe73a]">Key Features</h2>
             <div className="h-px bg-white/90 flex-grow ml-2 w-6" ></div>
           </div>
 
@@ -239,7 +225,7 @@ const SinglePage = () => {
                   <div className="text-gray-400  group-hover:text-[#ffe73a] transition-colors duration-200">
                     {row.col1.icon}
                   </div>
-                  <span className="text-white text-[2rem] group-hover:text-[#ffe73a] transition-colors duration-200">
+                  <span className="text-white text-[1.5rem] group-hover:text-[#ffe73a] transition-colors duration-200">
                     {row.col1.text}
                   </span>
                 </div>
@@ -255,7 +241,7 @@ const SinglePage = () => {
                   <div className="text-gray-400 group-hover:text-[#ffe73a] transition-colors duration-200">
                     {row.col2.icon}
                   </div>
-                  <span className="text-white  text-[2rem] group-hover:text-[#ffe73a] transition-colors duration-200">
+                  <span className="text-white  text-[1.5rem] group-hover:text-[#ffe73a] transition-colors duration-200">
                     {row.col2.text}
                   </span>
                 </div>
@@ -271,7 +257,7 @@ const SinglePage = () => {
                   <div className="text-gray-400 group-hover:text-[#ffe73a] transition-colors duration-200">
                     {row.col3.icon}
                   </div>
-                  <span className="text-white  text-[2rem] group-hover:text-[#ffe37a] transition-colors duration-200">
+                  <span className="text-white  text-[1.5rem] group-hover:text-[#ffe37a] transition-colors duration-200">
                     {row.col3.text}
                   </span>
                 </div>
@@ -286,58 +272,65 @@ const SinglePage = () => {
 
         <div className="rounded-lg shadow-md">
         <div className="mb-6 flex items-center gap-2">
-          <h2 className="text-[3.5rem] font-semibold text-[#ffe73a]">Overview</h2>
+          <h2 className="text-[2rem] font-semibold text-[#ffe73a]">Overview</h2>
           <div className="h-px bg-white/90 flex-grow ml-2 w-6"></div>
         </div>
-        <div className="grid grid-cols-2 overview-container gap-x-[5rem] gap-y-[3rem] text-white p-2">
+        <div className="grid grid-cols-3 overview-container gap-x-[1rem] gap-y-[1rem] text-white p-2">
           <div className="flex justify-between overview px-[1.5rem] py-[1.5rem]">
-            <span className="font-medium text-[2.4rem]">Make:</span>
-            <span className='text-[2.4rem]'>Lamborghini</span>
+            <span className="font-medium text-[1.5rem]">Make:</span>
+            <span className='text-[1.5rem]'>Lamborghini</span>
           </div>
           <div className="flex justify-between overview px-[1.5rem] py-[1.5rem]">
-            <span className="font-medium text-[2.4rem]">Repair:</span>
-            <span className='text-[2.4rem]'>No</span>
+            <span className="font-medium text-[1.5rem]">Repair:</span>
+            <span className='text-[1.5rem]'>No</span>
           </div>
           <div className="flex justify-between overview px-[1.5rem] py-[1.5rem]">
-            <span className="font-medium text-[2.4rem]" >Model:</span>
-            <span className='text-[2.4rem]'>Lamborghini ave11</span>
+            <span className="font-medium text-[1.5rem]" >Model:</span>
+            <span className='text-[1.5rem]'>Lamborghini ave11</span>
           </div>
-          <div className="flex justify-between text-[2.4rem] overview px-[1.5rem] py-[1.5rem]">
+          <div className="flex justify-between text-[1.5rem] overview px-[1.5rem] py-[1.5rem]">
             <span className="font-medium">Steering:</span>
             <span>Right</span>
           </div>
-          <div className="flex justify-between text-[2.4rem] overview px-[1.5rem] py-[1.5rem]">
+          <div className="flex justify-between text-[1.5rem] overview px-[1.5rem] py-[1.5rem]">
             <span className="font-medium">Year/Month:</span>
             <span>2023</span>
           </div>
-          <div className="flex justify-between text-[2.4rem] overview px-[1.5rem] py-[1.5rem]">
+          <div className="flex justify-between text-[1.5rem] overview px-[1.5rem] py-[1.5rem]">
             <span className="font-medium">Seating Capacity:</span>
             <span>08</span>
           </div> 
-          <div className="flex justify-between text-[2.4rem] overview px-[1.5rem] py-[1.5rem]">
+          <div className="flex justify-between text-[1.5rem] overview px-[1.5rem] py-[1.5rem]">
             <span className="font-medium">Mileage:</span>
             <span>25,100 miles</span>
           </div>
-          <div className="flex justify-between text-[2.4rem] overview px-[1.5rem] py-[1.5rem]">
+          <div className="flex justify-between text-[1.5rem] overview px-[1.5rem] py-[1.5rem]">
             <span className="font-medium">Fuel Type:</span>
             <span>Petrol + Gas</span>
           </div>
-          <div className="flex justify-between text-[2.4rem] overview px-[1.5rem] py-[1.5rem]">
-            <span className="font-medium">Doors:</span>
-            <span>4 doors</span>
-          </div>
-          <div className="flex justify-between text-[2.4rem] overview px-[1.5rem] py-[1.5rem]">
+        
+
+
+          <div className="flex justify-between text-[1.5rem] overview px-[1.5rem] py-[1.5rem]">
             <span className="font-medium">No. of Cylinders:</span>
             <span>03</span>
           </div>
-         
         </div>
       </div>
     
 
         {/* Contact Us Section */}
 
+        <div className="rounded-lg shadow-md">
+        <div className="mb-6 flex items-center gap-2">
+          <h2 className="text-[2rem] font-semibold text-[#ffe73a]">Contact Us</h2>
+          <div className="h-px bg-white/90 flex-grow ml-2 w-6"></div>
 
+  </div>
+
+  <p className=' text-[1.5rem] text-[#D3D3D3] font-[LightPoppins] tracking-[0.2rem]'> eius assumenda, accusamus corrupti eius assumend pariatur nihil deserunt repellat tenetur. Atque corporis doloribus aperiam, est asperiores id. Quos voluptates a accusantium distinctio, et cum explicabo quam asperiores nostrum. At distinctio dolor earum veritatis voluptas.</p>
+
+      </div>
 
 
       </div>
@@ -367,32 +360,32 @@ const SinglePage = () => {
 
           {/* Inquiry Form */}
           <div className="mt-8 bg-transparent border-white/80 border-2 backdrop-blur-sm rounded-lg p-6 shadow-lg">
-            <h2 className="text-[2.3rem] text-[#ffe37a] font-semibold mb-2">To More inquiry</h2>
-            <p className="text-gray-300 text-[1.7rem] mb-6">If choose this car to contact easily with us.</p>
+            <h2 className="text-[1.7rem] text-[#ffe37a] font-semibold mb-2">To More inquiry</h2>
+            <p className="text-gray-300 text-[1.5rem] mb-6">If choose this car to contact easily with us.</p>
 
             <form className="space-y-4">
               <div>
-                <label className="block  font-medium mb-1 mt-[1rem] text-white text-[1.7rem]">Name*</label>
+                <label className="block  font-medium mb-1 mt-[1rem] text-white text-[1.4rem]">Name*</label>
                 <input
                   type="text"
                   placeholder="Ex: Jhon Numan"
-                  className="w-full px-4 py-4 border border-gray-300 bg-transparent text-[1.5rem] text-white rounded-md focus:ring-2 focus:ring-[#ffe73a] focus:border-transparent transition-all duration-300"
+                  className="w-full px-4 py-4 border border-gray-300 bg-transparent text-[1.4rem] text-white rounded-md focus:ring-2 focus:ring-[#ffe73a] focus:border-transparent transition-all duration-300"
                 />
               </div>
 
               <div className='mt-[2rem]'>
-                <label className="block mt-[3rem] font-medium mb-1 text-white   text-[1.7rem]">Email*</label>
+                <label className="block mt-[3rem] font-medium mb-1 text-white   text-[1.4rem]">Email*</label>
                 <input
                   type="email"
                   placeholder="Ex: info@gmail.com"
-                  className="w-full px-4 py-4 border border-gray-300 rounded-md bg-transparent text-[1.5rem] text-white focus:ring-2 focus:ring-[#ffe73a] focus:border-transparent transition-all duration-300"
+                  className="w-full px-4 py-4 border border-gray-300 rounded-md bg-transparent text-[1.4rem] text-white focus:ring-2 focus:ring-[#ffe73a] focus:border-transparent transition-all duration-300"
                 />
               </div>
 
               <div>
-                <label className="block mt-[3rem]  font-medium mb-1 text-white  text-[1.7rem]">Phone*</label>
+                <label className="block mt-[3rem]  font-medium mb-1 text-white  text-[1.4rem]">Phone*</label>
                 <div className="flex ">
-                  <select className="px-2 py-2 border border-gray-300 text-[1.7rem] rounded-l-md bg-transparent text-white focus:ring-2 focus:ring-[#ffe73a] focus:border-transparent">
+                  <select className="px-2 py-2 border border-gray-300 text-[1.4rem] rounded-l-md bg-transparent text-white focus:ring-2 focus:ring-[#ffe73a] focus:border-transparent">
                     <option className='bg-black text-white'>🇺🇸 +1</option>
                     <option className='bg-black text-white'>🇬🇧 +44</option>
                     <option className='bg-black text-white'>🇯🇵 +81</option>
@@ -410,15 +403,15 @@ const SinglePage = () => {
               </div>
 
               <div>
-                <label className="block text-[1.7rem] mt-[3rem] text-white font-medium mb-1">Message*</label>
+                <label className="block text-[1.4rem] mt-[3rem] text-white font-medium mb-1">Message*</label>
                 <textarea
                   placeholder="Write your message"
                   rows={4}
-                  className="w-full px-4 py-4 border border-gray-300 rounded-md text-[1.5rem] bg-transparent text-white focus:ring-2 focus:ring-[#ffe73a] focus:border-transparent transition-all duration-300"
+                  className="w-full px-4 py-4 border border-gray-300 rounded-md text-[1.4rem] bg-transparent text-white focus:ring-2 focus:ring-[#ffe73a] focus:border-transparent transition-all duration-300"
                 />
               </div>
 
-              <button className="w-full py-3 px-4 bg-[#ffe73a] text-[1.7rem] text-black font-semibold rounded-md transition-all duration-300 hover:bg-[#ffe73a]/80 transform hover:scale-105">
+              <button className="w-full py-3 px-4 bg-[#ffe73a] text-[1.5rem] text-black font-semibold rounded-md transition-all duration-300 hover:bg-[#ffe73a]/80 transform hover:scale-105">
                 Send Message
               </button>
             </form>
@@ -449,11 +442,11 @@ const SinglePage = () => {
     <div className="suggested-container mt-[10rem] flex flex-col items-center gap-[3rem] mb-[3rem] font-[Poppins]">
   <div className="flex items-center w-full justify-center">
     <div className="flex-grow h-[2px] bg-white/90 mr-4"></div>
-    <h1 className="text-white text-[4rem]">Suggested for you</h1>
+    <h1 className="text-white text-[3rem]">Suggested for you</h1>
     <div className="flex-grow h-[2px] bg-white/90 ml-4"></div>
   </div>
 
-<div className='w-[100%] h-full flex flex-wrap gap-[4rem]   px-[2rem] justify-center'>
+<div className='w-[100%] h-full flex gap-[4.5rem]  ml-[]  px-[2rem] flex-wrap justify-center'>
 
 
 {carsCard.map((car, index) => (

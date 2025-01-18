@@ -25,7 +25,7 @@ const Navbar = () => {
 
   return (
     <header>
-      <div className="navbar-container font-[Poppins] w-[100%] h-[10rem] bg-[black] flex items-center justify-center gap-[15rem]">
+      <div className="navbar-container font-[Poppins] w-[100%] h-[10rem] bg-[black] flex items-center justify-center gap-[17.5rem]">
         <div>
           <img src={Logo} alt="Logo" className="w-[20rem] logo" />
         </div>
@@ -259,7 +259,7 @@ const Navbar = () => {
         </div>
 
         {/* Mobile Menu */}
-        <div className={`md:hidden absolute w-full bg-black transform transition-all duration-300 mt-[53rem] ease-in-out ${isOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-2 pointer-events-none'}`} style={{zIndex: 9999}}>
+        <div className={`md:hidden absolute w-full bg-black transform transition-all duration-300 mt-[60rem] ease-in-out ${isOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-2 pointer-events-none'}`} style={{zIndex: 9999}}>
           <div className="flex flex-col space-y-4 gap-[2rem] p-4 pl-[6.7rem]">
         <Link to="/">
         
@@ -318,16 +318,15 @@ const Navbar = () => {
               <span className='text-[2rem]'>Register</span>
               <ChevronRight size={20} className="ml-auto opacity-0 group-hover:opacity-100" />
             </a>
-
-            <Link to="">
-    
-    <a href="#" className="group flex items-center  ml-[-0.8rem] space-x-2 text-white menu-bottom hover:text-[#ffe73a] transition-all duration-300 transform hover:translate-x-2">
-      
-              <span className='text-[2rem]'>Add Listing</span>
-              <ChevronRight size={20} className="ml-auto opacity-0 group-hover:opacity-100" />
+                
+    <a href="#" className="group flex items-center list-toggle  space-x-2 text-white menu-bottom ml-[-0.3rem] hover:text-[#ffe73a] transition-all duration-300 transform hover:translate-x-2">
+              <span className='text-[2rem] list-text'>Add Listing</span>
             </a>
     
-    </Link>
+
+    
+    
+
           </div>
         </div>
 

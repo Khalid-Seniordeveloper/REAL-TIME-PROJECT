@@ -5,7 +5,7 @@ import { Camera, Fuel, Gauge,  Workflow } from 'lucide-react'
 import { Link } from 'react-router-dom'
 const Card = (props) => {
   return (
-<div className="w-[35rem] cards-container text-[1.7rem] bg-white rounded-3xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105">
+<div className="w-[31rem] cards-container cards-container-two text-[1.7rem] bg-white rounded-3xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105">
       {/* Header badges */}
       <div className="relative">
         <div className="absolute top-4 left-4 z-10">
@@ -37,13 +37,13 @@ const Card = (props) => {
       <div className="p-6 space-y-4">
         <div className="space-y-2">
           <p className="text-[#ffe73a] font-medium">{props.model}</p>
-          <h3 className="text-4xl font-bold text-gray-800">
+          <h3 className="text-[2rem] font-bold text-gray-800">
             {props.name}
           </h3>
         </div>
 
         {/* Car Details */}
-        <div className="flex gap-4 text-gray-600 text-2xl">
+        <div className="flex gap-4 text-gray-600 text-[1.3rem]">
           <span className="flex items-center gap-2">
           <Gauge className="w-6 h-6"/>
             {props.km}
@@ -60,7 +60,7 @@ const Card = (props) => {
         </div>
 
         {/* Price */}
-        <p className="text-4xl font-bold text-[black]">{props.price}</p>
+        <p className="text-[1.8rem] font-bold text-[black]">{props.price}</p>
 
         {/* Footer */}
         <div className="flex items-center justify-between pt-4">
@@ -70,9 +70,9 @@ const Card = (props) => {
               alt="Kathryn Murphy"
               className="w-10 h-10 rounded-full"
             />
-            <span className="font-medium text-gray-700 text-3xl">{props.owner}</span>
+            <span className="font-medium text-gray-700 text-[1.6rem]">{props.owner}</span>
           </div>
-          <button className="relative px-6 py-2 border-2 text-black border-[#f9df29]  rounded-full text-2xl overflow-hidden group">
+          <button className="relative px-4 py-2 border-2 text-black border-[#f9df29]  rounded-full text-[1.6rem] overflow-hidden group">
   <span className="absolute inset-0 bg-[#f9df29] transform scale-x-0 group-hover:scale-x-100 transition-all duration-500 ease-in-out origin-left h-full"></span>
   <span className="relative group-hover:text-black transition-colors duration-500 ease-in-out">
   <Link to="/singlepage">View More</Link>
