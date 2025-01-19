@@ -100,13 +100,13 @@ const Selector = () => {
     <>
       <div>
         <section>
-          <div className="selector-div-container relative w-full h-[13rem] bg-gray-800 bg-gradient-to-br from-gray-900 to-gray-800 p-4 rounded-lg flex justify-center items-center font-[Poppins]">
+          <div className="selector-div-container relative w-full h-[12rem] bg-gray-800 bg-gradient-to-br from-gray-900 to-gray-800 p-4 rounded-lg flex justify-center items-center font-[Poppins]">
             <div className="selector-container   ml-[2rem] grid grid-cols-3 gap-4 w-full">
               {selectors.map((selector) => (
                 <div key={selector.id} className="w-full relative">
                   <button
                     onClick={() => toggleSelector(selector.id)}
-                    className="Selectors w-full h-[4.5rem] bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-left flex items-center justify-between hover:border-orange-500/50 focus:outline-none focus:border-[#ffe73a] transition-all duration-300"
+                    className="Selectors w-full h-[4.1rem] bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-left flex items-center justify-between hover:border-orange-500/50 focus:outline-none focus:border-[#ffe73a] transition-all duration-300"
                   >
                     <span className="text-gray-400 text-[1.5rem] options-title">
                       {selector.selectedOption || selector.placeholder}
@@ -139,7 +139,7 @@ const Selector = () => {
 
               {/* Buttons */}
               <div className="flex items-center gap-4">
-                <RefreshCcw onClick={backToNormal} size={26} className="cursor-pointer" />
+                <RefreshCcw onClick={backToNormal} size={26} className="cursor-pointer refresh" />
               </div>
             </div>
           </div>
