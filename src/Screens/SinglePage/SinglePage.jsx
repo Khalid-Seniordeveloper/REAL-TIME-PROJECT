@@ -137,7 +137,6 @@ const SinglePage = () => {
 
   return (
 <>
-
 <Navbar/>
 <PagesBanner 
   one="Vehicle" 

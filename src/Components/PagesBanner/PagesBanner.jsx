@@ -3,7 +3,7 @@ import banner from '../../assets/banner.jpg';
 
 const PagesBanner = (props) => {
   return (
-    <div className="relative h-[46rem] overflow-hidden pages-banner-main-container w-[91%] ml-[6rem] font-[Poppins]">
+    <div className="relative h-[46rem] overflow-hidden pages-banner-main-container w-[100%]  font-[Poppins]">
       {/* Background Image with Overlay */}
       <div
         style={{

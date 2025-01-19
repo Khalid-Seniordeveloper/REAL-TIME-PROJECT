@@ -47,6 +47,8 @@ const Faq = () => {
 
   return (
     <>
+ <div className="max-w-[133rem] mx-auto px-[2rem]">
+
       <Navbar />
       <PagesBanner one="Frequently" two="Questions" three="And" four="Answers" para="Find answers to all your questions with our comprehensive FAQ section" btn="View More"/>
 
@@ -96,6 +98,7 @@ const Faq = () => {
 
 
       <Footer/>
+      </div>
     </>
   );
 };

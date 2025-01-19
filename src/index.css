@@ -109,11 +109,11 @@ body{
     width: 45rem;
 }
 .list-toggle{
-    border: 2px solid #ffe73a;
+    border: 1.5px solid #ffe73a;
     width: 40%;
     display: flex;
     justify-content: center;
-    padding: 1rem;
+    padding:  1rem;
     margin-left: -1rem;
 }
 .for-grid{
@@ -211,6 +211,15 @@ gap: 40rem;
  justify-content: center;
  gap: 1rem;
     }
+    .drop-main-container{
+       padding: 0 4rem; 
+    }
+    .cards-container{
+        width: 29rem;
+    }
+    .info-cards{
+        font-size: 1.2rem;
+    }
 }
 @media(max-width : 936px){
     html{
@@ -281,12 +290,16 @@ gap: 40rem;
 .selector-container{
     margin-left: 3rem;
 }
+.fields-container{
+    width: 40%;
+}
 .second-page-container{
     width: 88%;
     margin-left: 0.5rem;
 }
 .drop-main-container{
-    gap: 8rem;
+    gap: 2rem;
+   padding: 0 4rem; 
 }
 .footer-main-container{
     gap: 25rem;
@@ -431,7 +444,7 @@ margin-left: -1rem;
   } 
   .Selectors{
     width: 26rem;
-    height:  6rem;
+    height:  5rem;
   }
   
 .selector-container{
@@ -449,8 +462,8 @@ margin-left: -1rem;
  /* margin-left: 3rem; */
 }
 .selector-div-container {
-    height: 35rem;
-    /* margin-top: -36rem; */
+    height: 20rem;
+    margin-top: -6rem;
     width: 100%;
 
 }

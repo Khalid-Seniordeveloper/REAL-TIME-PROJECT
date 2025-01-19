@@ -43,7 +43,7 @@ const Card = (props) => {
         </div>
 
         {/* Car Details */}
-        <div className="flex gap-4 text-gray-600 text-[1.3rem]">
+        <div className="flex gap-4 text-gray-600 text-[1.3rem] info-cards">
           <span className="flex items-center gap-2">
           <Gauge className="w-6 h-6"/>
             {props.km}

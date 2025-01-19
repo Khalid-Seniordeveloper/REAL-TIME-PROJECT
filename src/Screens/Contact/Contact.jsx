@@ -13,6 +13,8 @@ const Contact = () => {
     
   return (
     <>
+ <div className="max-w-[133rem] mx-auto px-[2rem]">
+
     <Navbar/>
     <PagesBanner one="For" two="Any" three="Information" para="Reach out to us directly for further assistance." btn="Contact Us"/>
    
@@ -31,7 +33,7 @@ const Contact = () => {
 </div>
 
 
-<div className="w-full h-auto contact-field-container font-[Poppins] flex items-center justify-center gap-[3'ppprem] mt-[11rem] flex-wrap mb-[4rem]">
+<div className="w-full h-auto contact-field-container font-[Poppins] flex items-center justify-center gap-[10rem] mt-[11rem] flex-wrap mb-[4rem]">
 
   {/* Left Section: Contact Info */}
   <div className="w-full md:w-[30%] h-full">
@@ -132,7 +134,7 @@ const Contact = () => {
 </div>
 
 <Footer/>
-
+</div>
 
     </>
   )

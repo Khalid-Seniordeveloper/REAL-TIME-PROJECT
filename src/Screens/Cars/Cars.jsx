@@ -178,11 +178,12 @@ const Drop = () => {
   };
   return (
     <>
+ <div className="max-w-[133rem] mx-auto px-[2rem]">
+
       <Navbar />
 
       <PagesBanner one="Vehicle" two="Vault" para="Explore and discover your ideal vehicle collection." btn="View More" />
-
-      <div className="mb-[6rem] w-[100%] px-[6rem] h-full flex justify-center gap-[2rem] drop-main-container mt-[3rem] font-[Poppins]">
+      <div className="mb-[6rem] w-[100%] h-full flex justify-center gap-[2rem] drop-main-container mt-[3rem] font-[Poppins]">
         {/* First Column */}
             <div className="w-[25%] h-full bg-[black] fields-container text-[1.4rem]">
       <div className="w-[100%] p-6 bg-black rounded-md shadow-lg border border-[#ffe73a] shadow-white">
@@ -380,7 +381,7 @@ const Drop = () => {
 
         
 
-            <div        key={index} className="w-[31rem] cards-container cards-container-two  text-[1.7rem] bg-white rounded-3xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105">
+            <div        key={index} className="w-[30rem] cards-container cards-container-two  text-[1.7rem] bg-white rounded-3xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105">
       {/* Header badges */}
       <div className="relative">
         <div className="absolute top-4 left-4 z-10">
@@ -518,6 +519,8 @@ const Drop = () => {
         </div>
       </div>
       <Footer />
+</div>
+
     </>
   );
 };

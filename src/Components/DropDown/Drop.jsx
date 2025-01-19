@@ -147,7 +147,7 @@ const Drop = () => {
       fuel: "Diesel",
       transmission: "Automatic",
       price: "$22,500",
-      owner: "Sarah Lee",
+      owner: "Sarah",
       image: carsix
     },
     {
@@ -157,7 +157,7 @@ const Drop = () => {
       fuel: "Petrol",
       transmission: "Automatic",
       price: "$35,000",
-      owner: "James Wilson",
+      owner: "James",
       image: carseven
     },
     {
@@ -167,7 +167,7 @@ const Drop = () => {
       fuel: "Electric",
       transmission: "Automatic",
       price: "$85,000",
-      owner: "Megan Davis",
+      owner: "Megan",
       image: carone
     },
     {
@@ -177,7 +177,7 @@ const Drop = () => {
       fuel: "Petrol",
       transmission: "Manual",
       price: "$48,000",
-      owner: "Emma Clark",
+      owner: "Emma",
       image: cartwo
     },
     {
@@ -187,7 +187,7 @@ const Drop = () => {
       fuel: "Diesel",
       transmission: "Automatic",
       price: "$22,000",
-      owner: "Lucas Martinez",
+      owner: "Lucas",
       image: carthree
     },
     {
@@ -197,7 +197,7 @@ const Drop = () => {
       fuel: "Petrol",
       transmission: "Automatic",
       price: "$90,000",
-      owner: "Olivia Robinson",
+      owner: "Olivia",
       image: carfour
     },
     {
@@ -207,7 +207,7 @@ const Drop = () => {
       fuel: "Hybrid",
       transmission: "Automatic",
       price: "$38,000",
-      owner: "Jack Thomas",
+      owner: "Jack",
       image: carfive
     }
   ];

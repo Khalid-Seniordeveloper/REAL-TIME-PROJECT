@@ -13,9 +13,11 @@ const About = () => {
 
   return (
     <>
-    <Navbar/>
-    <PagesBanner one="Our" two="Breif" three="History" para="Explore our journey and discover insights about our mission, vision, and values." btn="See More"/>
+ <div>
 
+ <div className="max-w-[133rem] mx-auto px-[2rem]">
+ <Navbar/>
+    <PagesBanner one="Our" two="Breif" three="History" para="Explore our journey and discover insights about our mission, vision, and values." btn="See More"/>
 
 {/* About section  */}
 <div className='w-[100%] flex justify-center mt-[4rem] mb-[4rem]'>
@@ -120,6 +122,9 @@ we're thrilled to have you join our community of automotive enthusiasts and prof
 </div>
 
 <Footer/>
+
+ </div>
+ </div>
 
     </>
   )
