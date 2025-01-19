@@ -638,6 +638,9 @@ margin-left: -1rem;
     .navbar-container{
         gap: 13rem;
     }
+    .option-container{
+        width: 100%;
+    }
  }
  @media(max-width : 321px){
     .navbar-container{
