@@ -35,7 +35,6 @@ const Contact = () => {
 
 <div className="w-full h-auto contact-field-container font-[Poppins] flex items-center justify-center gap-[10rem] mt-[11rem] flex-wrap mb-[4rem]">
 
-  {/* Left Section: Contact Info */}
   <div className="w-full md:w-[30%] h-full">
 
     <h1 className="text-[2.3rem] text-white">Contact Us With Support Line</h1>
@@ -59,10 +58,8 @@ const Contact = () => {
     </h2>
   </div>
 
-  {/* Right Section: Form Section */}
   <div className="w-full md:w-[50%] h-full flex flex-col gap-[2rem] items-center border-2 border-solid border-white rounded-[2rem] py-[5rem]">
 
-    {/* Full Name Field */}
     <div className="w-full flex flex-col items-center">
       <div className="w-[80%] flex justify-start items-end">
         <label className="text-white text-[2.3rem] mb-[-1rem]">Full Name</label>
@@ -74,7 +71,6 @@ const Contact = () => {
       />
     </div>
 
-    {/* Phone No Field */}
     <div className="w-full flex flex-col items-center">
       <div className="w-[80%] flex justify-start items-end">
         <label className="text-white text-[2.3rem] mb-[-1rem]">Phone No</label>
@@ -86,7 +82,6 @@ const Contact = () => {
       />
     </div>
 
-    {/* Email Field */}
     <div className="w-full flex flex-col items-center">
       <div className="w-[80%] flex justify-start items-end">
         <label className="text-white text-[2.3rem] mb-[-1rem]">Email</label>
@@ -98,7 +93,6 @@ const Contact = () => {
       />
     </div>
 
-    {/* Subject Field */}
     <div className="w-full flex flex-col items-center">
       <div className="w-[80%] flex justify-start items-end">
         <label className="text-white text-[2.3rem] mb-[-1rem]">Subject</label>
@@ -110,7 +104,6 @@ const Contact = () => {
       />
     </div>
 
-    {/* Short Note Field */}
     <div className="w-full flex flex-col items-center">
       <div className="w-[80%] flex justify-start items-end">
         <label className="text-white text-[2.3rem] mb-[-1rem]">Short Note</label>
@@ -121,7 +114,6 @@ const Contact = () => {
       ></textarea>
     </div>
 
-    {/* Submit Button */}
     <button className="relative text-[1.8rem] text-white p-[1.5rem] rounded-[0.7rem] border-2 border-solid border-[#ffe73a] overflow-hidden group">
   <span className="absolute inset-0 bg-[#ffe73a] transform scale-x-0 group-hover:scale-x-100 transition-all duration-500 ease-in-out origin-left h-full"></span>
   <span className="relative group-hover:text-black transition-colors duration-500 ease-in-out">

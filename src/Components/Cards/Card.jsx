@@ -6,7 +6,6 @@ import { Link } from 'react-router-dom'
 const Card = (props) => {
   return (
 <div className="w-[31rem] cards-container cards-container-two text-[1.7rem] bg-white rounded-3xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105">
-      {/* Header badges */}
       <div className="relative">
         <div className="absolute top-4 left-4 z-10">
           <span className="bg-[#f9df29] text-black px-4 py-1 rounded-full text-xl">
@@ -25,7 +24,6 @@ const Card = (props) => {
           </span>
         </div>
         
-        {/* Car Image */}
         <img 
           src={props.src}
           alt="2017 BMW X1"
@@ -33,7 +31,6 @@ const Card = (props) => {
         />
       </div>
 
-      {/* Card Content */}
       <div className="p-6 space-y-4">
         <div className="space-y-2">
           <p className="text-[#ffe73a] font-medium">{props.model}</p>
@@ -42,7 +39,6 @@ const Card = (props) => {
           </h3>
         </div>
 
-        {/* Car Details */}
         <div className="flex gap-4 text-gray-600 text-[1.3rem] info-cards">
           <span className="flex items-center gap-2">
           <Gauge className="w-6 h-6"/>
@@ -59,10 +55,8 @@ const Card = (props) => {
           </span>
         </div>
 
-        {/* Price */}
         <p className="text-[1.8rem] font-bold text-[black]">{props.price}</p>
 
-        {/* Footer */}
         <div className="flex items-center justify-between pt-4">
           <div className="flex items-center gap-2">
             <img 

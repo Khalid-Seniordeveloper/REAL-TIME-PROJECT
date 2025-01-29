@@ -137,6 +137,7 @@ const SinglePage = () => {
 
   return (
 <>
+<div className="max-w-[133rem] mx-auto px-[2rem]">
 <Navbar/>
 <PagesBanner 
   one="Vehicle" 
@@ -144,9 +145,8 @@ const SinglePage = () => {
   para="Discover the performance, features, and luxury of your dream car." 
   btn="Explore More Cars" 
 />
-<div className='w-[100%] flex gap-[4rem] px-[1.3rem] font-[Poppins] mt-[5rem] main-single-page-container'>
-      <div className="flex w-[65%] for-car-width flex-col   ml-[4.6rem] space-y-8 first-container">
-        {/* Carousel Section */}
+<div className='w-[100%] flex gap-[4rem]  font-[Poppins] mt-[5rem] main-single-page-container'>
+      <div className="flex w-[65%] for-car-width flex-col   space-y-8 first-container">
         <div className="relative w-full single-page-car-container">
   <div className="relative h-[38rem] md:h-[38rem] sm:h-[28rem] car-for-height overflow-hidden rounded-lg">
     {cars.map((car, index) => (
@@ -187,7 +187,6 @@ const SinglePage = () => {
 </div>
 
 
-        {/* Info Section */}
        
 
 
@@ -217,7 +216,6 @@ const SinglePage = () => {
           </div>
         </div>
 
-        {/* Features Section */}
         <div className="w-full">
           <div className="mb-6 flex items-center gap-2">
             <h2 className="text-[2rem] font-semibold text-[#ffe73a]">Key Features</h2>
@@ -328,7 +326,6 @@ const SinglePage = () => {
       </div>
     
 
-        {/* Contact Us Section */}
 
         <div className="rounded-lg shadow-md">
         <div className="mb-6 flex items-center gap-2">
@@ -344,14 +341,12 @@ const SinglePage = () => {
 
       </div>
 
-  {/* second contaienr  */}
 
 
 
 
-      <div className='w-[25%] second-page-container'>
+      <div className='w-[35%] second-page-container'>
       <div className=" right-14 top-4 flex flex-col gap-4 p-6  border-gray-300 border-opacity-40 border-2 rounded-lg shadow-lg">
-          {/* Action Buttons */}
           <button className="w-full bg-[#ffe73a] text-[1.5rem] hover:bg-[#ffe73a]/80 text-black py-3 px-4 rounded-md transition-all duration-300 flex items-center justify-center gap-2 transform hover:scale-105">
             <Phone size={20} />
             Show Number
@@ -367,7 +362,6 @@ const SinglePage = () => {
             Report Now
           </button>
 
-          {/* Inquiry Form */}
           <div className="mt-8 bg-transparent border-white/80 border-2 backdrop-blur-sm rounded-lg p-6 shadow-lg">
             <h2 className="text-[1.7rem] text-[#ffe37a] font-semibold mb-2">To More inquiry</h2>
             <p className="text-gray-300 text-[1.5rem] mb-6">If choose this car to contact easily with us.</p>
@@ -427,7 +421,6 @@ const SinglePage = () => {
           </div>
         </div>
 
-        {/* Google Maps Embed */}
         <div className="w-full mt-8 flex items-center justify-center">
           <div className="relative w-full" style={{ position: "relative", width: "100%", height: "100%", minHeight: "300px" }}>
             <div className="absolute top-0 left-0 w-full h-full flex flex-col justify-center items-center">
@@ -476,6 +469,7 @@ const SinglePage = () => {
 
 </div>
 <Footer/>
+</div>
     </>
   );
 };

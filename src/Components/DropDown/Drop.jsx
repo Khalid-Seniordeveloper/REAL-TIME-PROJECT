@@ -213,12 +213,11 @@ const Drop = () => {
   ];
   const [selectedOption, setSelectedOption] = useState('');
   const handleRadioChange = (option) => {
-    setSelectedOption(option); // Update the selected option
+    setSelectedOption(option); 
   };
   return (
     <>
       <div className='mb-[6rem] w-[100%] h-full flex justify-center gap-[2rem]   drop-main-container mt-[3rem] font-[Poppins]'>
-        {/* First Column */}
         <div className="w-[25%] h-full bg-[black] fields-container text-[1.4rem]">
   <div className="w-[100%] p-6 bg-black rounded-md shadow-lg border border-[#ffe73a] shadow-white">
     <div className="flex justify-between items-center mb-6">
@@ -231,7 +230,6 @@ const Drop = () => {
 
     {Object.keys(dropdowns).map((name) => (
       <div key={name} className="mb-4">
-        {/* Dropdown Button */}
         <button
           onClick={() => handleDropdownClick(name)}
           className="w-full px-4 py-3 bg-transparent border border-[#ffe73a] shadow-sm shadow-white rounded-lg flex justify-between items-center hover:border-orange-500"
@@ -247,7 +245,6 @@ const Drop = () => {
           />
         </button>
 
-        {/* Dropdown Options */}
         {openDropdown === name && (
           <div className="mt-2 p-2 bg-black border border-[#ffe73a] rounded-lg">
             <select
@@ -269,7 +266,6 @@ const Drop = () => {
       </div>
     ))}
 
-    {/* Price Range Filter */}
     <div className="mt-6 mb-6">
   <div className="flex justify-between mb-2">
     <span className="text-[#ffe73a] font-semibold text-3xl">Price:</span>
@@ -278,26 +274,24 @@ const Drop = () => {
     </span>
   </div>
 
-  {/* Min Price Slider */}
   <div className="mb-4">
     <label className="block text-[#ffe73a] text-xl mb-2">Min Price</label>
     <input
       type="range"
       min="0"
-      max={priceRange[1]} // Lock min slider to max value
+      max={priceRange[1]} 
       value={priceRange[0]}
       onChange={(e) => handlePriceChange(e, 'min')}
       className="w-full h-2 bg-[#ffe73a] rounded-lg appearance-none cursor-pointer"
     />
   </div>
 
-  {/* Max Price Slider */}
   <div>
     <label className="block text-[#ffe73a] text-xl mb-2">Max Price</label>
     <input
       type="range"
-      min={priceRange[0]} // Lock max slider to min value
-      max="50000" // Set a max value for the price range
+      min={priceRange[0]}
+      max="50000" 
       value={priceRange[1]}
       onChange={(e) => handlePriceChange(e, 'max')}
       className="w-full h-2 bg-[#ffe73a] rounded-lg appearance-none cursor-pointer"
@@ -305,7 +299,6 @@ const Drop = () => {
   </div>
 </div>
 
-    {/* Render remaining dropdowns from dropdownstwo */}
     {Object.keys(dropdownstwo).map((name) => (
       <div key={name} className="mb-4">
         <button
@@ -379,10 +372,10 @@ const Drop = () => {
           >
             <input
               type="radio"
-              name="singleSelectOption" // Ensure the name is the same for all radio buttons
+              name="singleSelectOption"
               value={singleOption}
-              checked={selectedOption === singleOption} // Compare with selectedOption
-              onChange={() => handleRadioChange(singleOption)} // Handle radio change
+              checked={selectedOption === singleOption} 
+              onChange={() => handleRadioChange(singleOption)}
               className="w-6 h-6 text-gray-200 border-gray-300 rounded focus:ring-[#ffe73a] cursor-pointer"
             />
             <span className="featured-container text-[1.5rem] text-gray-200 group-hover:text-[#ffe73a]">
@@ -407,7 +400,6 @@ const Drop = () => {
 
 
 
-{/* CARDS CONTAINER  */}
 
 <div className='w-[75%]  h-full cards-parent-container cards-parent-container-two'>
 
@@ -432,7 +424,6 @@ const Drop = () => {
 
 </div>
 
-        {/* Second Column */}
      
   </div>
       <Footer/>

@@ -128,25 +128,20 @@ const Navbar = () => {
       
       <h1 className='text-white text-2xl mt-[1rem]' onClick={() => { setIsLoginOpen(false); setIsSignupOpen(true); }}><Link to="#">Don't have an account?</Link></h1>
 
-
-
     </div>
   </div>
 
-  {/* Register Button */}
 
 
 
 
   <button
-    onClick={() => setIsSignupOpen(true)}
     className="register px-6 py-2 bg-transparent text-white font-medium rounded-lg border-2 border-[#ffe73a] relative overflow-hidden group transition-all duration-500 text-[1.5rem] hover:bg-black"
   >
     <span className="absolute left-0 top-0 w-full h-full bg-gradient-to-r from-red-500 to-white transform scale-x-0 group-hover:scale-x-100 transition-all duration-700 origin-left"></span>
     <span className="relative group-hover:text-white">Register</span>
   </button>
 
-  {/* Signup Panel */}
   <div
     className={`fixed top-0 right-0 h-full bg-black text-white z-50 transform transition-all duration-500 ${
    isSignupOpen ? 'translate-x-0 w-[325px] login-panel' : 'translate-x-full w-0 opacity-0'
@@ -246,7 +241,6 @@ const Navbar = () => {
             </button>
           </div>
           
-          {/* Mobile Menu Toggle */}
           <div className="md:hidden  ">
             <button onClick={toggleMenu} className="text-white">
               {isOpen ? 
@@ -258,7 +252,6 @@ const Navbar = () => {
           
         </div>
 
-        {/* Mobile Menu */}
         <div className={`md:hidden absolute w-full bg-black transform transition-all duration-300 mt-[60rem] ease-in-out ${isOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-2 pointer-events-none'}`} style={{zIndex: 9999}}>
           <div className="flex flex-col space-y-4 gap-[2rem] p-4 pl-[6.7rem]">
         <Link to="/">
@@ -333,7 +326,6 @@ const Navbar = () => {
       </div>
 
 
-{/* Login Signup  */}
 
 
 

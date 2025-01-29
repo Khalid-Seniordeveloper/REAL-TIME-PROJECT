@@ -73,10 +73,8 @@ const Drop = () => {
   const handleYearChange = (e, type) => {
     const value = parseInt(e.target.value);
     if (type === 'start') {
-      // Ensure that start year does not exceed the end year
       setYearRange([value, yearRange[1]]);
     } else {
-      // Ensure that end year does not go below the start year
       setYearRange([yearRange[0], value]);
     }
   };
@@ -109,37 +107,34 @@ const Drop = () => {
     }
     setSelectedFeatures(newSelected);
   };
-  const cars = []; // Initialize an empty array
+  const cars = [];
 
-  // Generating 270 cars using the original car structure
   for (let i = 0; i < 270; i++) {
     cars.push({
       name: `Car ${i + 1} - Model`,
-      model: ['Sedan', 'SUV', 'Coupe'][i % 3], // Example models for diversity
-      kms: `${Math.floor(Math.random() * 100000)} kms`, // Random kilometers
-      fuel: ['Petrol', 'Diesel', 'Electric'][i % 3], // Random fuel type
-      transmission: ['Automatic', 'Manual'][i % 2], // Random transmission type
-      price: `$${(Math.random() * 50000 + 10000).toFixed(0)}`, // Random price
-      owner: `Owner ${i + 1}`, // Owner name
-      image: [carone, cartwo, carthree, carfour, carfive, carsix][i % 6], // Cycle through the images
+      model: ['Sedan', 'SUV', 'Coupe'][i % 3], 
+      kms: `${Math.floor(Math.random() * 100000)} kms`,
+      fuel: ['Petrol', 'Diesel', 'Electric'][i % 3],
+      transmission: ['Automatic', 'Manual'][i % 2],
+      price: `$${(Math.random() * 50000 + 10000).toFixed(0)}`, 
+      owner: `Owner ${i + 1}`,
+      image: [carone, cartwo, carthree, carfour, carfive, carsix][i % 6], 
     });
   }
   
 
-  const carsPerPage = 9; // Adjusted to 6 cars per page
+  const carsPerPage = 9;
   const [selectedOption, setSelectedOption] = useState('');
   const handleRadioChange = (option) => {
-    setSelectedOption(option); // Update the selected option
+    setSelectedOption(option);
   };
 
   const [currentPage, setCurrentPage] = useState(1);
 
-  // Get current cars based on the page
   const indexOfLastCar = currentPage * carsPerPage;
   const indexOfFirstCar = indexOfLastCar - carsPerPage;
   const currentCars = cars.slice(indexOfFirstCar, indexOfLastCar);
 
-  // Page Numbers logic
   const totalPages = Math.ceil(cars.length / carsPerPage);
   const pageNumbers = [];
   for (let i = 1; i <= totalPages; i++) {
@@ -163,11 +158,11 @@ const Drop = () => {
   };
 
   const handleDropdownClick = (name) => {
-    setOpenDropdown(openDropdown === name ? null : name); // Toggle on click
+    setOpenDropdown(openDropdown === name ? null : name);
   };
   const getDisplayedPages = () => {
-    const startPage = Math.floor((currentPage - 1) / 4) * 4 + 1; // Calculate the first page of the current range
-    const endPage = Math.min(startPage + 3, totalPages); // Ensure endPage doesn't exceed totalPages
+    const startPage = Math.floor((currentPage - 1) / 4) * 4 + 1; 
+    const endPage = Math.min(startPage + 3, totalPages); 
     const displayedPages = [];
   
     for (let i = startPage; i <= endPage; i++) {
@@ -184,7 +179,6 @@ const Drop = () => {
 
       <PagesBanner one="Vehicle" two="Vault" para="Explore and discover your ideal vehicle collection." btn="View More" />
       <div className="mb-[6rem] w-[100%] h-full flex justify-center gap-[2rem] drop-main-container mt-[3rem] font-[Poppins]">
-        {/* First Column */}
             <div className="w-[25%] h-full bg-[black] fields-container text-[1.4rem]">
       <div className="w-[100%] p-6 bg-black rounded-md shadow-lg border border-[#ffe73a] shadow-white">
         <div className="flex justify-between items-center mb-6">
@@ -197,7 +191,6 @@ const Drop = () => {
     
         {Object.keys(dropdowns).map((name) => (
           <div key={name} className="mb-4">
-            {/* Dropdown Button */}
             <button
               onClick={() => handleDropdownClick(name)}
               className="w-full px-4 py-3 bg-transparent border border-[#ffe73a] shadow-sm shadow-white rounded-lg flex justify-between items-center hover:border-orange-500"
@@ -213,7 +206,6 @@ const Drop = () => {
               />
             </button>
     
-            {/* Dropdown Options */}
             {openDropdown === name && (
               <div className="mt-2 p-2 bg-black border border-[#ffe73a] rounded-lg">
                 <select
@@ -235,7 +227,6 @@ const Drop = () => {
           </div>
         ))}
     
-        {/* Price Range Filter */}
         <div className="mt-6 mb-6">
       <div className="flex justify-between mb-2">
         <span className="text-[#ffe73a] font-semibold text-3xl">Price:</span>
@@ -244,26 +235,24 @@ const Drop = () => {
         </span>
       </div>
     
-      {/* Min Price Slider */}
       <div className="mb-4">
         <label className="block text-[#ffe73a] text-xl mb-2">Min Price</label>
         <input
           type="range"
           min="0"
-          max={priceRange[1]} // Lock min slider to max value
+          max={priceRange[1]} 
           value={priceRange[0]}
           onChange={(e) => handlePriceChange(e, 'min')}
           className="w-full h-2 bg-[#ffe73a] rounded-lg appearance-none cursor-pointer"
         />
       </div>
     
-      {/* Max Price Slider */}
       <div>
         <label className="block text-[#ffe73a] text-xl mb-2">Max Price</label>
         <input
           type="range"
-          min={priceRange[0]} // Lock max slider to min value
-          max="50000" // Set a max value for the price range
+          min={priceRange[0]} 
+          max="50000"
           value={priceRange[1]}
           onChange={(e) => handlePriceChange(e, 'max')}
           className="w-full h-2 bg-[#ffe73a] rounded-lg appearance-none cursor-pointer"
@@ -271,7 +260,6 @@ const Drop = () => {
       </div>
     </div>
     
-        {/* Render remaining dropdowns from dropdownstwo */}
         {Object.keys(dropdownstwo).map((name) => (
           <div key={name} className="mb-4">
             <button
@@ -310,7 +298,6 @@ const Drop = () => {
           </div>
         ))}
     
-    {/* Year Range Filter */}
   
     
         <div className="W-[100%] p-6  bg-transparent border border-[#ffe73a] rounded-lg shadow-sm shadow-white">
@@ -346,10 +333,10 @@ const Drop = () => {
               >
                 <input
                   type="radio"
-                  name="singleSelectOption" // Ensure the name is the same for all radio buttons
+                  name="singleSelectOption"
                   value={singleOption}
-                  checked={selectedOption === singleOption} // Compare with selectedOption
-                  onChange={() => handleRadioChange(singleOption)} // Handle radio change
+                  checked={selectedOption === singleOption} 
+                  onChange={() => handleRadioChange(singleOption)} 
                   className="w-6 h-6 text-gray-200 border-gray-300 rounded focus:ring-[#ffe73a] cursor-pointer"
                 />
                 <span className="featured-container text-[1.5rem] text-gray-200 group-hover:text-[#ffe73a]">
@@ -367,10 +354,8 @@ const Drop = () => {
       </div>
     </div>
 
-        {/* CARDS CONTAINER  */}
         
         <div className="w-[75%]  h-full cards-parent-container cards-parent-container-two  ">
-          {/* Displaying cars dynamically based on the page number */}
          
        
           {currentCars.map((car, index) => (
@@ -381,8 +366,7 @@ const Drop = () => {
 
         
 
-            <div        key={index} className="w-[30rem] cards-container cards-container-two  text-[1.7rem] bg-white rounded-3xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105">
-      {/* Header badges */}
+            <div        key={index} className="w-[rem] cards-container cards-container-two  text-[1.7rem] bg-white rounded-3xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105">
       <div className="relative">
         <div className="absolute top-4 left-4 z-10">
           <span className="bg-[#f9df29] text-black px-4 py-1 rounded-full text-2xl">
@@ -401,7 +385,6 @@ const Drop = () => {
           </span>
         </div>
         
-        {/* Car Image */}
         <img 
           src={car.image}
           alt="2017 BMW X1"
@@ -409,7 +392,6 @@ const Drop = () => {
         />
       </div>
 
-      {/* Card Content */}
       <div className="p-6 space-y-4">
         <div className="space-y-2">
           <p className="text-[#ffe73a] text-3xl font-medium">{car.model}</p>
@@ -418,7 +400,6 @@ const Drop = () => {
           </h3>
         </div>
 
-        {/* Car Details */}
         <div className="flex gap-4 text-gray-600 text-[1.2rem]">
           <span className="flex items-center gap-2">
           <Gauge className="w-9 h-9"/>
@@ -435,10 +416,8 @@ const Drop = () => {
           </span>
         </div>
 
-        {/* Price */}
         <p className="text-[1.7rem] font-bold text-[black]">{car.price}</p>
 
-        {/* Footer */}
         <div className="flex items-center justify-between pt-4">
           <div className="flex items-center gap-2">
             <img 
@@ -464,7 +443,6 @@ const Drop = () => {
 
           ))}
 
-          {/* Pagination Buttons */}
           <div className="flex justify-center items-center gap-2 mt-[10rem] text-[2.5rem]">
     <button
       onClick={prevPage}
@@ -474,7 +452,6 @@ const Drop = () => {
       &#8592; Prev
     </button>
     
-    {/* Display dynamic page numbers */}
     {getDisplayedPages().map((number) => (
       <button
         key={number}
@@ -489,12 +466,10 @@ const Drop = () => {
       </button>
     ))}
     
-    {/* Ellipsis if there are more than 4 pages */}
     {totalPages > 4 && currentPage + 4 < totalPages && (
       <span className="text-gray-800">...</span>
     )}
     
-    {/* Last page button */}
     {totalPages > 4 && currentPage + 4 < totalPages && (
       <button
         onClick={() => handleClick(totalPages)}

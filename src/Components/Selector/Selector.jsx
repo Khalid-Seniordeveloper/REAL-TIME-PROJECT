@@ -115,7 +115,6 @@ const Selector = () => {
                       className={`w-5 h-5 text-[#ffe73a] transition-transform duration-200 ${openSelector === selector.id ? 'rotate-180' : ''}`}
                     />
                   </button>
-                  {/* Dropdown (opened on click) */}
                   {openSelector === selector.id && (
                     <div className="absolute w-[93%] option-container top-full mt-2 bg-gray-800 border border-gray-700 backdrop-blur-sm rounded-lg shadow-lg z-10">
                       <select
@@ -137,7 +136,6 @@ const Selector = () => {
                 </div>
               ))}
 
-              {/* Buttons */}
               <div className="flex items-center gap-4">
                 <RefreshCcw onClick={backToNormal} size={26} className="cursor-pointer refresh" />
               </div>
